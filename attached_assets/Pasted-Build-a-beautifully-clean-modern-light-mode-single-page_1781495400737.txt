@@ -1,0 +1,30 @@
+Build a beautifully clean, modern, light-mode single-page marketing landing page for a private personal cloud storage service named "Vaulti" (a secure, open-source alternative to mainstream data monopolies).
+
+The tech stack must be React, Tailwind CSS, Lucide React icons, and Framer Motion for gentle, elegant, and fluid transitions.
+
+### 🧠 UNIVERSAL TRUST PSYCHOLOGY STRATEGY (LIGHT MODE):
+1. Color Scheme: Use an approachable, professional corporate palette. Use clean off-white backgrounds (bg-slate-50), deep navy blue text (text-slate-900) for unshakeable authority, and vibrant trust blue (blue-600) alongside secure emerald green (emerald-600) for action points. 
+2. Marketing Tone: Keep it completely transparent, warm, and professional. Frame open-source as an honest badge of integrity: "We use the globally trusted, open-source Nextcloud core architecture because your privacy shouldn't be a corporate secret—it should be a verifiable guarantee."
+3. The Visual Guarantee: Avoid intimidating code matrix graphics. Instead, design a clean, simplified vector animation component showing a family photo passing through a secure shield icon and converting into a neat, locked document graphic with a checkmark. This clearly illustrates to everyday people that their files are private without using technical jargon.
+
+### 🖥️ PAGE STRUCTURE & ARCHITECTURE:
+- STICKY NAVIGATION: A crisp white glassmorphism header featuring a friendly, pulsing green dot labeled "Vaulti Security Network: Active & Fully Protected".
+- ACCESSIBLE HERO SECTION: 
+  * Headline: "Reclaim Your Photos. Own Your Memories."
+  * Sub-headline: "Automated, full-resolution background backup for your phone's photos and videos. Powered by the globally trusted, open-source Nextcloud engine, your vault is completely private. Not even the system administrator can ever view your files."
+  * Primary CTA Button: A welcoming, high-contrast trust-blue button reading "Set Up Your Private Vault".
+- THE TRANSPARENCY BLOCK (COMPARISON MATRIX): A highly readable, non-aggressive comparison table balancing "Corporate Clouds" (Data tracking, mandatory monthly rent, compressed family memories) vs "Vaulti Open Cloud" (100% private node, fixed cost tiers, absolute original quality).
+- SIMPLIFIED THREE-STEP JOURNEY: Clean, elegant cards explaining the effortless setup:
+  1. Secure Your Plan: Start a simple conversation with us via our secure chat link to allocate your vault space.
+  2. Quick App Connection: Create your private credentials via a secure link and download the free, trusted Nextcloud app from the App Store.
+  3. Continuous Protection: Toggle "Auto-Backup" on your phone. Your photos are secured locally on your device before saving safely to our private storage cluster.
+- FRIENDLY PRICING CAPSULES: Elegant, elevated white cards with subtle drop shadows:
+  * Lite Backup Pack: 50 GB Storage / 6-Month Active Vault / Fixed One-Time Payment.
+  * Extended Media Vault: 200 GB Storage / 1-Year Active Vault / Fixed One-Time Payment.
+  * Event & Trip Capsule: 100 GB Storage / 30-Day Automated Vault Archive / Fixed One-Time Payment.
+- ACCOMMODATING FAQ SECTION: Clean accordion menus addressing natural concerns using warm language: "Why do you use open-source Nextcloud?", "How am I guaranteed absolute visual privacy?", and "How does the subscription window renewal process work?"
+
+### ✨ GENTLE VISUAL EFFECTS REQUIRED:
+- Avoid aggressive tracking blurs or stark neon lasers. Use smooth, natural fade-ins and subtle upward slides via Framer Motion as components appear on screen.
+- Button and card hovers should display a gentle, soft drop-shadow scaling response rather than glowing neon matrices.
+- Maintain seamless web responsiveness with mobile-first viewport scaling optimized for everyday smartphones. Configure standard placeholder endpoints (`https://m.me/your_fb_username`) to smoothly redirect communication.

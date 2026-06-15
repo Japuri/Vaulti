@@ -3,51 +3,80 @@ import { ArrowRight } from "lucide-react";
 
 export function Hero() {
   return (
-    <section className="min-h-[60vh] pt-24 pb-12 flex flex-col items-center relative overflow-hidden px-4 bg-[#080c14]">
-      {/* Matrix grid background */}
-      <div className="absolute inset-0 z-0 opacity-30 pointer-events-none">
-        <div className="absolute inset-0 bg-[linear-gradient(to_right,#06b6d41a_1px,transparent_1px),linear-gradient(to_bottom,#06b6d41a_1px,transparent_1px)] bg-[size:4rem_4rem] [mask-image:radial-gradient(ellipse_60%_50%_at_50%_50%,#000_70%,transparent_100%)]" />
-      </div>
-      {/* Radial glow */}
-      <div className="absolute inset-0 bg-[radial-gradient(ellipse_80%_50%_at_50%_50%,rgba(6,182,212,0.08),transparent)] pointer-events-none" />
+    <section className="min-h-screen pt-28 pb-20 flex flex-col items-center justify-center relative overflow-hidden px-4 bg-gradient-to-b from-slate-50 to-white">
+      <div className="absolute inset-0 bg-[radial-gradient(ellipse_80%_60%_at_50%_10%,rgba(219,234,254,0.6),transparent)] pointer-events-none" />
 
-      <div className="relative z-10 max-w-5xl mx-auto text-center mt-8">
+      <div className="relative z-10 max-w-4xl mx-auto text-center">
         <motion.div
-          initial={{ opacity: 0, y: 20 }}
+          initial={{ opacity: 0, y: 16 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, delay: 0.1 }}
-          className="inline-flex items-center gap-2 bg-[#06b6d4]/10 text-[#06b6d4] px-4 py-2 rounded-full text-sm font-medium mb-8 border border-[#06b6d4]/30"
+          transition={{ duration: 0.6, delay: 0.1 }}
+          className="inline-flex items-center gap-2 bg-emerald-50 text-emerald-700 border border-emerald-200 px-4 py-2 rounded-full text-sm font-medium mb-8"
         >
-          <span className="w-2 h-2 rounded-full bg-[#06b6d4] animate-pulse" />
-          Decentralized Zero-Knowledge Architecture
+          <span className="w-2 h-2 rounded-full bg-emerald-500 animate-gentle-pulse" />
+          Powered by open-source Nextcloud — verifiable privacy
         </motion.div>
 
         <motion.h1
-          initial={{ opacity: 0, y: 30 }}
+          initial={{ opacity: 0, y: 24 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 1, delay: 0.2 }}
-          className="text-4xl md:text-6xl font-bold text-white mb-6 leading-tight tracking-tight"
+          transition={{ duration: 0.7, delay: 0.2 }}
+          className="text-5xl md:text-7xl font-bold text-slate-900 mb-6 leading-tight tracking-tight"
         >
-          Your Memories Are Not
-          <br />
-          <span className="text-[#06b6d4] drop-shadow-[0_0_20px_rgba(6,182,212,0.5)]">Public Property.</span>
+          Reclaim Your Photos.{" "}
+          <span className="text-blue-600">Own Your Memories.</span>
         </motion.h1>
 
-        <p className="text-lg md:text-xl text-slate-400 mb-12 max-w-3xl mx-auto leading-relaxed">
-          True zero-knowledge cloud storage. Automatically back up your phone&apos;s full-resolution 4K media
-          with absolute cryptographic isolation. Not even the server infrastructure administrator can view your files.
-        </p>
+        <motion.p
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.7, delay: 0.3 }}
+          className="text-lg md:text-xl text-slate-600 mb-12 max-w-3xl mx-auto leading-relaxed"
+        >
+          Automated, full-resolution background backup for your phone's photos and videos. Powered by the globally trusted, open-source Nextcloud engine, your vault is completely private.{" "}
+          <span className="font-semibold text-slate-800">Not even the system administrator can ever view your files.</span>
+        </motion.p>
 
-        <div className="flex flex-col sm:flex-row items-center gap-4 justify-center">
+        <motion.div
+          initial={{ opacity: 0, y: 16 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6, delay: 0.45 }}
+          className="flex flex-col sm:flex-row items-center gap-4 justify-center"
+        >
           <a
             href="https://m.me/your_fb_username"
-            className="group relative inline-flex items-center gap-2 overflow-hidden bg-[#06b6d4]/10 text-[#06b6d4] border border-[#06b6d4]/40 px-8 py-4 rounded-sm font-mono font-bold text-lg uppercase tracking-widest hover:bg-[#06b6d4]/20 transition-all duration-300 shadow-[0_0_15px_rgba(6,182,212,0.2)]"
+            className="inline-flex items-center gap-2 bg-blue-600 text-white px-8 py-4 rounded-xl font-semibold text-lg hover:bg-blue-700 transition-all duration-200 shadow-lg hover:shadow-xl hover:shadow-blue-200"
           >
-            <span className="relative z-10">Initialize Your Vault via Secure Chat</span>
-            <ArrowRight className="w-5 h-5 relative z-10" />
-            <div className="absolute inset-0 h-full w-full bg-gradient-to-r from-transparent via-[#06b6d4]/30 to-transparent -translate-x-full group-hover:animate-[shimmer_2s_infinite]" />
+            Set Up Your Private Vault
+            <ArrowRight className="w-5 h-5" />
           </a>
-        </div>
+          <a
+            href="#features"
+            className="inline-flex items-center gap-2 text-slate-600 px-6 py-4 rounded-xl font-medium hover:text-slate-900 transition-colors duration-200"
+          >
+            See how it works
+            <ArrowRight className="w-4 h-4" />
+          </a>
+        </motion.div>
+
+        <motion.div
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ duration: 1, delay: 0.8 }}
+          className="mt-16 flex flex-wrap items-center justify-center gap-8 text-sm text-slate-500"
+        >
+          {[
+            "AES-256 Encrypted",
+            "No Data Profiling",
+            "Open-Source Verified",
+            "Zero Admin Access",
+          ].map((badge) => (
+            <div key={badge} className="flex items-center gap-2">
+              <span className="w-1.5 h-1.5 rounded-full bg-emerald-500" />
+              {badge}
+            </div>
+          ))}
+        </motion.div>
       </div>
     </section>
   );

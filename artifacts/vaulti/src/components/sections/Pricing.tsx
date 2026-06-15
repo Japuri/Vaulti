@@ -1,152 +1,144 @@
-import { useRef, useState } from "react";
+import { useRef } from "react";
 import { motion, useInView } from "framer-motion";
-import { Clock, Zap, Database, Check, ArrowRight } from "lucide-react";
+import { Clock, Zap, Camera, Check, ArrowRight } from "lucide-react";
 
 const tiers = [
   {
     icon: Clock,
-    name: "Lite Node",
+    name: "Lite Backup Pack",
     storage: "50 GB",
-    duration: "6-Month Allocation",
-    pricing: "Fixed Cost",
-    tagline: "Entry protocol",
+    duration: "6-Month Active Vault",
+    pricing: "Fixed One-Time Payment",
+    tagline: "Great for getting started",
     featured: false,
-    features: ["Full-Resolution Backup", "Auto-Sync Enabled", "Open-Source Encryption", "6-Month Storage"],
-  },
-  {
-    icon: Zap,
-    name: "Standard Node",
-    storage: "200 GB",
-    duration: "1-Year Allocation",
-    pricing: "Fixed Cost",
-    tagline: "Most Popular",
-    featured: true,
-    badge: "RECOMMENDED",
     features: [
-      "Full-Resolution Backup",
-      "Auto-Sync Enabled",
-      "Open-Source Encryption",
-      "12-Month Storage",
-      "Priority Support",
-      "Migration Assistance",
+      "Full-resolution photo backup",
+      "Auto-sync enabled",
+      "AES-256 encryption",
+      "6 months of secure storage",
+      "Nextcloud app access",
     ],
   },
   {
-    icon: Database,
-    name: "Event Capsule",
+    icon: Zap,
+    name: "Extended Media Vault",
+    storage: "200 GB",
+    duration: "1-Year Active Vault",
+    pricing: "Fixed One-Time Payment",
+    tagline: "Most popular choice",
+    featured: true,
+    badge: "Best Value",
+    features: [
+      "Full-resolution photo & video backup",
+      "Auto-sync enabled",
+      "AES-256 encryption",
+      "12 months of secure storage",
+      "Nextcloud app access",
+      "Priority support",
+      "Migration assistance",
+    ],
+  },
+  {
+    icon: Camera,
+    name: "Event & Trip Capsule",
     storage: "100 GB",
-    duration: "30-Day Allocation",
-    pricing: "Fixed Cost",
-    tagline: "Ephemeral protocol",
+    duration: "30-Day Automated Vault",
+    pricing: "Fixed One-Time Payment",
+    tagline: "Perfect for events & travel",
     featured: false,
-    features: ["Full-Resolution Backup", "Auto-Sync Enabled", "Open-Source Encryption", "30-Day Archive"],
+    features: [
+      "Full-resolution photo & video backup",
+      "Auto-sync enabled",
+      "AES-256 encryption",
+      "30-day vault archive",
+      "Nextcloud app access",
+    ],
   },
 ];
-
-function PricingCard({ tier, index, isInView }: { tier: typeof tiers[0]; index: number; isInView: boolean }) {
-  const [hovered, setHovered] = useState(false);
-  const Icon = tier.icon;
-
-  return (
-    <motion.div
-      initial={{ opacity: 0, y: 40 }}
-      animate={isInView ? { opacity: 1, y: 0 } : {}}
-      transition={{ duration: 0.7, delay: 0.2 + index * 0.15 }}
-      onMouseEnter={() => setHovered(true)}
-      onMouseLeave={() => setHovered(false)}
-      className={`relative overflow-hidden transition-all duration-300 rounded-sm ${
-        tier.featured
-          ? "bg-[#0a0f1c] border-2 border-[#06b6d4] shadow-[0_0_30px_rgba(6,182,212,0.15)]"
-          : "bg-[#0a0f1c]/60 border border-[#06b6d4]/20"
-      } ${hovered ? "shadow-[0_0_25px_rgba(6,182,212,0.2)]" : ""}`}
-    >
-      {/* Featured badge */}
-      {tier.badge && (
-        <div className="absolute top-0 left-0 right-0 flex justify-center">
-          <div className="bg-[#06b6d4] text-[#080c14] font-mono font-bold text-xs px-6 py-1.5 rounded-b-sm uppercase tracking-wider">
-            {tier.badge}
-          </div>
-        </div>
-      )}
-
-      <div className={`p-8 ${tier.badge ? "pt-10" : ""}`}>
-        <div className="flex items-center gap-3 mb-6">
-          <div className={`w-10 h-10 rounded-sm flex items-center justify-center transition-all duration-300 ${
-            tier.featured || hovered ? "bg-[#06b6d4]/10 border border-[#06b6d4]/30" : "bg-[#06b6d4]/5 border border-[#06b6d4]/20"
-          }`}>
-            <Icon className={`w-5 h-5 transition-colors duration-300 ${
-              tier.featured || hovered ? "text-[#06b6d4]" : "text-slate-500"
-            }`} />
-          </div>
-          <div>
-            <div className="font-mono text-xs text-slate-500 uppercase tracking-wider">{tier.tagline}</div>
-          </div>
-        </div>
-
-        <h3 className="font-mono text-xl font-bold text-white mb-2 uppercase tracking-wider">{tier.name}</h3>
-
-        <div className="mb-6">
-          <div className="text-4xl font-bold text-white mb-1">
-            <span className={tier.featured ? "text-[#06b6d4]" : "text-white"}>{tier.storage}</span>
-          </div>
-          <div className="font-mono text-sm text-slate-500">{tier.duration}</div>
-          <div className="font-mono text-xs text-[#06b6d4] mt-1 uppercase tracking-wider">{tier.pricing}</div>
-        </div>
-
-        <div className="space-y-2 mb-8">
-          {tier.features.map((f) => (
-            <div key={f} className="flex items-center gap-2 font-mono text-sm text-slate-400">
-              <Check className="w-4 h-4 text-[#06b6d4] shrink-0" />
-              {f}
-            </div>
-          ))}
-        </div>
-
-        <a
-          href="https://m.me/your_fb_username"
-          className={`block w-full text-center font-mono font-semibold text-sm py-3 rounded-sm transition-all duration-300 flex items-center justify-center gap-2 uppercase tracking-wider ${
-            tier.featured
-              ? "bg-[#06b6d4]/10 text-[#06b6d4] border border-[#06b6d4]/40 hover:bg-[#06b6d4]/20"
-              : "bg-[#06b6d4]/5 text-slate-400 hover:text-[#06b6d4] border border-[#06b6d4]/20 hover:border-[#06b6d4]/40"
-          }`}
-        >
-          Initialize
-          <ArrowRight className="w-4 h-4" />
-        </a>
-      </div>
-    </motion.div>
-  );
-}
 
 export function Pricing() {
   const ref = useRef<HTMLDivElement>(null);
   const isInView = useInView(ref, { once: true, margin: "-100px" });
 
   return (
-    <section id="pricing" ref={ref} className="py-24 px-4 bg-[#080c14]">
-      <div className="max-w-6xl mx-auto">
+    <section id="pricing" ref={ref} className="py-24 px-4 bg-slate-50">
+      <div className="max-w-5xl mx-auto">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={isInView ? { opacity: 1, y: 0 } : {}}
-          transition={{ duration: 0.8 }}
-          className="text-center mb-12"
+          transition={{ duration: 0.7 }}
+          className="text-center mb-14"
         >
-          <div className="inline-flex items-center gap-2 font-mono text-xs text-[#06b6d4]/70 uppercase tracking-widest border border-[#06b6d4]/30 px-4 py-2 rounded-sm mb-6 bg-[#06b6d4]/5">
-            <Database className="w-4 h-4" />
-            Allocation Protocols
+          <div className="inline-flex items-center gap-2 bg-blue-50 text-blue-700 border border-blue-100 px-4 py-2 rounded-full text-sm font-medium mb-5">
+            Simple, transparent pricing
           </div>
-          <h2 className="text-4xl md:text-5xl font-bold text-white mb-4">
-            Resource Allocation
+          <h2 className="text-4xl md:text-5xl font-bold text-slate-900 mb-4">
+            No Subscriptions. No Surprises.
           </h2>
-          <p className="font-mono text-sm text-slate-500 max-w-2xl mx-auto">
-            No recurring subscriptions. No hidden fees. Fixed cost per allocation period.
+          <p className="text-lg text-slate-500 max-w-2xl mx-auto">
+            One fixed payment. Your vault runs for the full period. Renew when you're ready — on your terms.
           </p>
         </motion.div>
 
-        <div className="grid md:grid-cols-3 gap-6">
-          {tiers.map((tier, i) => (
-            <PricingCard key={tier.name} tier={tier} index={i} isInView={isInView} />
-          ))}
+        <div className="grid md:grid-cols-3 gap-6 items-start">
+          {tiers.map((tier, i) => {
+            const Icon = tier.icon;
+            return (
+              <motion.div
+                key={tier.name}
+                initial={{ opacity: 0, y: 36 }}
+                animate={isInView ? { opacity: 1, y: 0 } : {}}
+                transition={{ duration: 0.6, delay: 0.15 + i * 0.12 }}
+                className={`relative bg-white rounded-2xl overflow-hidden card-hover ${
+                  tier.featured
+                    ? "border-2 border-blue-600 shadow-xl shadow-blue-100"
+                    : "border border-slate-100 shadow-sm"
+                }`}
+              >
+                {tier.badge && (
+                  <div className="bg-blue-600 text-white text-xs font-bold px-4 py-2 text-center uppercase tracking-wider">
+                    {tier.badge}
+                  </div>
+                )}
+
+                <div className="p-7">
+                  <div className={`w-12 h-12 rounded-xl flex items-center justify-center mb-5 ${tier.featured ? "bg-blue-100" : "bg-slate-100"}`}>
+                    <Icon className={`w-6 h-6 ${tier.featured ? "text-blue-600" : "text-slate-500"}`} />
+                  </div>
+
+                  <div className="text-xs font-semibold text-slate-400 uppercase tracking-widest mb-1">{tier.tagline}</div>
+                  <h3 className="text-xl font-bold text-slate-900 mb-4">{tier.name}</h3>
+
+                  <div className="mb-1">
+                    <span className={`text-4xl font-extrabold ${tier.featured ? "text-blue-600" : "text-slate-900"}`}>{tier.storage}</span>
+                  </div>
+                  <div className="text-sm text-slate-500 mb-1">{tier.duration}</div>
+                  <div className="text-xs font-semibold text-emerald-600 mb-6">{tier.pricing}</div>
+
+                  <div className="space-y-2.5 mb-8">
+                    {tier.features.map((f) => (
+                      <div key={f} className="flex items-center gap-2.5 text-sm text-slate-600">
+                        <Check className="w-4 h-4 text-emerald-500 shrink-0" />
+                        {f}
+                      </div>
+                    ))}
+                  </div>
+
+                  <a
+                    href="https://m.me/your_fb_username"
+                    className={`flex items-center justify-center gap-2 w-full py-3.5 rounded-xl font-semibold text-sm transition-all duration-200 ${
+                      tier.featured
+                        ? "bg-blue-600 text-white hover:bg-blue-700 shadow-md hover:shadow-blue-200 hover:shadow-lg"
+                        : "bg-slate-100 text-slate-700 hover:bg-slate-200"
+                    }`}
+                  >
+                    Get Started
+                    <ArrowRight className="w-4 h-4" />
+                  </a>
+                </div>
+              </motion.div>
+            );
+          })}
         </div>
       </div>
     </section>
