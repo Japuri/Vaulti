@@ -9,7 +9,7 @@ import { Footer } from "./components/sections/Footer";
 
 function App() {
   return (
-    <div className="min-h-screen bg-background text-foreground selection:bg-primary/30 font-sans" style={{ scrollBehavior: "smooth" }}>
+    <div className="min-h-screen bg-[#080c14] text-white font-sans selection:bg-[#06b6d4]/30" style={{ scrollBehavior: "smooth" }}>
       <Navigation />
       <main>
         <Hero />

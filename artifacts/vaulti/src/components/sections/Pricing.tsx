@@ -1,38 +1,45 @@
 import { useRef, useState } from "react";
 import { motion, useInView } from "framer-motion";
-import { Database, Zap, Clock, ChevronRight } from "lucide-react";
+import { Clock, Zap, Database, Check, ArrowRight } from "lucide-react";
 
 const tiers = [
   {
     icon: Clock,
-    name: "Lite Capsule",
+    name: "Lite Node",
     storage: "50 GB",
-    duration: "6-Month Autonomous Hosting",
-    pricing: "Flat Allocation Rate",
-    tagline: "Entry-level sovereignty",
+    duration: "6-Month Allocation",
+    pricing: "Fixed Cost",
+    tagline: "Entry protocol",
     featured: false,
-    features: ["AES-256 Client Encryption", "Background Auto-Sync", "Unindexed Token Access", "6-Month Node Lease"],
+    features: ["Full-Resolution Backup", "Auto-Sync Enabled", "Open-Source Encryption", "6-Month Storage"],
   },
   {
     icon: Zap,
-    name: "Quantum Vault",
+    name: "Standard Node",
     storage: "200 GB",
-    duration: "1-Year Autonomous Hosting",
-    pricing: "Premium Allocation Rate",
-    tagline: "Maximum sovereignty",
+    duration: "1-Year Allocation",
+    pricing: "Fixed Cost",
+    tagline: "Most Popular",
     featured: true,
-    badge: "Most Sovereign",
-    features: ["AES-256 Client Encryption", "Priority Node Allocation", "Background Auto-Sync", "Unindexed Token Access", "12-Month Node Lease", "Migration Toolkit"],
+    badge: "RECOMMENDED",
+    features: [
+      "Full-Resolution Backup",
+      "Auto-Sync Enabled",
+      "Open-Source Encryption",
+      "12-Month Storage",
+      "Priority Support",
+      "Migration Assistance",
+    ],
   },
   {
     icon: Database,
-    name: "Ephemeral Capsule",
+    name: "Event Capsule",
     storage: "100 GB",
-    duration: "30-Day Auto-Purge Cycle",
-    pricing: "Project Allocation Rate",
-    tagline: "Zero-trace project isolation",
+    duration: "30-Day Allocation",
+    pricing: "Fixed Cost",
+    tagline: "Ephemeral protocol",
     featured: false,
-    features: ["AES-256 Client Encryption", "30-Day Cryptographic Purge", "Background Auto-Sync", "Unindexed Token Access"],
+    features: ["Full-Resolution Backup", "Auto-Sync Enabled", "Open-Source Encryption", "30-Day Archive"],
   },
 ];
 
@@ -42,69 +49,54 @@ function PricingCard({ tier, index, isInView }: { tier: typeof tiers[0]; index: 
 
   return (
     <motion.div
-      initial={{ opacity: 0, y: 50 }}
+      initial={{ opacity: 0, y: 40 }}
       animate={isInView ? { opacity: 1, y: 0 } : {}}
       transition={{ duration: 0.7, delay: 0.2 + index * 0.15 }}
       onMouseEnter={() => setHovered(true)}
       onMouseLeave={() => setHovered(false)}
-      className={`relative group rounded-sm overflow-hidden ${
+      className={`relative overflow-hidden transition-all duration-300 rounded-sm ${
         tier.featured
-          ? "glass-panel border-primary/50 shadow-[0_0_30px_rgba(6,182,212,0.2)]"
-          : "glass-panel"
-      }`}
-      whileHover={{ scale: 1.02, transition: { duration: 0.2 } }}
+          ? "bg-[#0a0f1c] border-2 border-[#06b6d4] shadow-[0_0_30px_rgba(6,182,212,0.15)]"
+          : "bg-[#0a0f1c]/60 border border-[#06b6d4]/20"
+      } ${hovered ? "shadow-[0_0_25px_rgba(6,182,212,0.2)]" : ""}`}
     >
-      {/* Animated border glow on hover */}
-      <motion.div
-        animate={{
-          opacity: hovered ? 1 : tier.featured ? 0.5 : 0,
-          boxShadow: hovered
-            ? "inset 0 0 0 1px rgba(6,182,212,0.8), 0 0 30px rgba(6,182,212,0.3)"
-            : tier.featured
-            ? "inset 0 0 0 1px rgba(6,182,212,0.4), 0 0 15px rgba(6,182,212,0.15)"
-            : "none",
-        }}
-        transition={{ duration: 0.3 }}
-        className="absolute inset-0 rounded-sm pointer-events-none"
-      />
-
       {/* Featured badge */}
       {tier.badge && (
         <div className="absolute top-0 left-0 right-0 flex justify-center">
-          <div className="bg-primary text-background font-mono text-xs font-bold uppercase tracking-widest px-6 py-1">
+          <div className="bg-[#06b6d4] text-[#080c14] font-mono font-bold text-xs px-6 py-1.5 rounded-b-sm uppercase tracking-wider">
             {tier.badge}
           </div>
         </div>
       )}
 
-      <div className={`relative z-10 p-8 ${tier.badge ? "pt-10" : ""}`}>
+      <div className={`p-8 ${tier.badge ? "pt-10" : ""}`}>
         <div className="flex items-center gap-3 mb-6">
-          <div className={`w-10 h-10 border rounded-sm flex items-center justify-center transition-all duration-300 ${
-            tier.featured || hovered ? "border-primary bg-primary/10" : "border-border bg-card/50"
+          <div className={`w-10 h-10 rounded-sm flex items-center justify-center transition-all duration-300 ${
+            tier.featured || hovered ? "bg-[#06b6d4]/10 border border-[#06b6d4]/30" : "bg-[#06b6d4]/5 border border-[#06b6d4]/20"
           }`}>
             <Icon className={`w-5 h-5 transition-colors duration-300 ${
-              tier.featured || hovered ? "text-primary" : "text-muted-foreground"
+              tier.featured || hovered ? "text-[#06b6d4]" : "text-slate-500"
             }`} />
           </div>
           <div>
-            <div className="font-mono text-xs text-muted-foreground uppercase tracking-widest">{tier.tagline}</div>
+            <div className="font-mono text-xs text-slate-500 uppercase tracking-wider">{tier.tagline}</div>
           </div>
         </div>
 
-        <h3 className="text-xl font-bold text-white mb-2 uppercase tracking-wide">{tier.name}</h3>
+        <h3 className="font-mono text-xl font-bold text-white mb-2 uppercase tracking-wider">{tier.name}</h3>
 
         <div className="mb-6">
-          <div className="text-5xl font-bold text-white mb-1">
-            <span className={tier.featured ? "text-primary glow-text" : ""}>{tier.storage}</span>
+          <div className="text-4xl font-bold text-white mb-1">
+            <span className={tier.featured ? "text-[#06b6d4]" : "text-white"}>{tier.storage}</span>
           </div>
-          <div className="font-mono text-sm text-muted-foreground">{tier.duration}</div>
-          <div className="font-mono text-xs text-primary/70 mt-1 uppercase tracking-wider">{tier.pricing}</div>
+          <div className="font-mono text-sm text-slate-500">{tier.duration}</div>
+          <div className="font-mono text-xs text-[#06b6d4] mt-1 uppercase tracking-wider">{tier.pricing}</div>
         </div>
 
         <div className="space-y-2 mb-8">
           {tier.features.map((f) => (
-            <div key={f} className="flex items-center gap-2 font-mono text-xs text-muted-foreground">
-              <ChevronRight className="w-3 h-3 text-primary shrink-0" />
+            <div key={f} className="flex items-center gap-2 font-mono text-sm text-slate-400">
+              <Check className="w-4 h-4 text-[#06b6d4] shrink-0" />
               {f}
             </div>
           ))}
@@ -112,13 +104,14 @@ function PricingCard({ tier, index, isInView }: { tier: typeof tiers[0]; index: 
 
         <a
           href="https://m.me/your_fb_username"
-          className={`block w-full text-center font-mono text-sm font-bold uppercase tracking-widest py-3 rounded-sm transition-all duration-300 ${
+          className={`block w-full text-center font-mono font-semibold text-sm py-3 rounded-sm transition-all duration-300 flex items-center justify-center gap-2 uppercase tracking-wider ${
             tier.featured
-              ? "bg-primary text-background hover:bg-primary/90 shadow-[0_0_15px_rgba(6,182,212,0.4)]"
-              : "border border-primary/40 text-primary hover:bg-primary/10 hover:border-primary/70"
+              ? "bg-[#06b6d4]/10 text-[#06b6d4] border border-[#06b6d4]/40 hover:bg-[#06b6d4]/20"
+              : "bg-[#06b6d4]/5 text-slate-400 hover:text-[#06b6d4] border border-[#06b6d4]/20 hover:border-[#06b6d4]/40"
           }`}
         >
-          Initialize Vault
+          Initialize
+          <ArrowRight className="w-4 h-4" />
         </a>
       </div>
     </motion.div>
@@ -130,23 +123,23 @@ export function Pricing() {
   const isInView = useInView(ref, { once: true, margin: "-100px" });
 
   return (
-    <section id="pricing" ref={ref} className="py-32 px-4 relative">
-      <div className="absolute inset-0 bg-[radial-gradient(ellipse_60%_40%_at_50%_100%,rgba(6,182,212,0.05),transparent)]" />
-
+    <section id="pricing" ref={ref} className="py-24 px-4 bg-[#080c14]">
       <div className="max-w-6xl mx-auto">
         <motion.div
-          initial={{ opacity: 0, y: 30 }}
+          initial={{ opacity: 0, y: 20 }}
           animate={isInView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.8 }}
-          className="text-center mb-16"
+          className="text-center mb-12"
         >
-          <div className="inline-flex items-center gap-2 font-mono text-xs text-primary/70 uppercase tracking-widest border border-primary/30 px-4 py-2 rounded-sm mb-6 bg-primary/5">
-            <Database className="w-3 h-3" />
-            Allocation Tiers
+          <div className="inline-flex items-center gap-2 font-mono text-xs text-[#06b6d4]/70 uppercase tracking-widest border border-[#06b6d4]/30 px-4 py-2 rounded-sm mb-6 bg-[#06b6d4]/5">
+            <Database className="w-4 h-4" />
+            Allocation Protocols
           </div>
-          <h2 className="text-4xl md:text-5xl font-bold text-white mb-4">Sovereign Allocation Tiers</h2>
-          <p className="text-muted-foreground font-mono max-w-2xl mx-auto">
-            No recurring subscriptions. No surveillance tax. Select your node allocation and own your encrypted space outright.
+          <h2 className="text-4xl md:text-5xl font-bold text-white mb-4">
+            Resource Allocation
+          </h2>
+          <p className="font-mono text-sm text-slate-500 max-w-2xl mx-auto">
+            No recurring subscriptions. No hidden fees. Fixed cost per allocation period.
           </p>
         </motion.div>
 

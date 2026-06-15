@@ -1,32 +1,32 @@
 import { useRef } from "react";
 import { motion, useInView } from "framer-motion";
-import { X, Check, ShieldAlert } from "lucide-react";
+import { X, Check } from "lucide-react";
 
 const rows = [
   {
-    label: "Storage Model",
-    bad: "Data Aggregation & Profiling",
-    good: "Zero-Knowledge E2EE",
+    label: "Privacy Model",
+    bad: "Data Tracking & Profiling",
+    good: "100% Zero-Knowledge Node",
   },
   {
     label: "Media Quality",
-    bad: "Compressed, Downscaled Media",
-    good: "Bit-for-Bit Original Quality",
+    bad: "Compressed, Lossy Uploads",
+    good: "Absolute Original Fidelity",
   },
   {
-    label: "Pricing Structure",
-    bad: "Perpetual Subscription Rent",
-    good: "Flat Fixed Allocation Packs",
+    label: "Pricing",
+    bad: "Mandatory Monthly Rent",
+    good: "Fixed Cost Allocation",
+  },
+  {
+    label: "Open Source",
+    bad: "Closed, Proprietary Black Box",
+    good: "Auditable Nextcloud Engine",
   },
   {
     label: "Admin Access",
-    bad: "Full Server-Side Visibility",
-    good: "Cryptographically Blind Nodes",
-  },
-  {
-    label: "Data At Rest",
-    bad: "Plaintext on Corporate Servers",
-    good: "Client-Side Encrypted Always",
+    bad: "Can Access Your Files",
+    good: "Zero Visibility — Ever",
   },
 ];
 
@@ -35,40 +35,40 @@ export function ParadigmShift() {
   const isInView = useInView(ref, { once: true, margin: "-100px" });
 
   return (
-    <section ref={ref} className="py-32 px-4 relative">
-      <div className="absolute inset-0 bg-[linear-gradient(to_bottom,transparent,rgba(6,182,212,0.03),transparent)]" />
-
-      <div className="max-w-5xl mx-auto">
+    <section ref={ref} className="py-24 px-4 bg-[#080c14]">
+      <div className="max-w-4xl mx-auto">
         <motion.div
-          initial={{ opacity: 0, y: 30 }}
+          initial={{ opacity: 0, y: 20 }}
           animate={isInView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.8 }}
-          className="text-center mb-16"
+          className="text-center mb-12"
         >
-          <div className="inline-flex items-center gap-2 font-mono text-xs text-primary/70 uppercase tracking-widest border border-primary/30 px-4 py-2 rounded-sm mb-6 bg-primary/5">
-            <ShieldAlert className="w-3 h-3" />
-            Competitive Analysis
+          <div className="inline-flex items-center gap-2 font-mono text-xs text-[#06b6d4]/70 uppercase tracking-widest border border-[#06b6d4]/30 px-4 py-2 rounded-sm mb-6 bg-[#06b6d4]/5">
+            <span className="w-2 h-2 rounded-full bg-[#06b6d4]" />
+            Protocol Comparison
           </div>
-          <h2 className="text-4xl md:text-5xl font-bold text-white mb-4">The Paradigm Shift</h2>
-          <p className="text-muted-foreground font-mono max-w-2xl mx-auto">
-            Monopolistic cloud infrastructure was never designed to protect you. Vaulti was.
+          <h2 className="text-4xl md:text-5xl font-bold text-white mb-4">
+            The Paradigm Shift
+          </h2>
+          <p className="font-mono text-sm text-slate-500 max-w-2xl mx-auto">
+            How centralized corporate storage compares to zero-knowledge architecture.
           </p>
         </motion.div>
 
         <motion.div
-          initial={{ opacity: 0, y: 40 }}
+          initial={{ opacity: 0, y: 30 }}
           animate={isInView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.8, delay: 0.2 }}
-          className="glass-panel rounded-sm overflow-hidden"
+          className="cyber-card overflow-hidden"
         >
           {/* Header */}
-          <div className="grid grid-cols-[1fr_1.5fr_1.5fr] border-b border-border">
-            <div className="p-4 font-mono text-xs text-muted-foreground uppercase tracking-widest" />
-            <div className="p-4 border-l border-border">
-              <span className="font-mono text-xs text-red-400/70 uppercase tracking-widest">Monopolistic Clouds</span>
+          <div className="grid grid-cols-[1fr_1.5fr_1.5fr] border-b border-[#06b6d4]/20 bg-[#06b6d4]/5">
+            <div className="p-4" />
+            <div className="p-4 border-l border-[#06b6d4]/20">
+              <span className="font-mono text-sm font-semibold text-red-500/60 uppercase tracking-wider">Corporate Cloud</span>
             </div>
-            <div className="p-4 border-l border-primary/30 bg-primary/5">
-              <span className="font-mono text-xs text-primary uppercase tracking-widest glow-text">Vaulti</span>
+            <div className="p-4 border-l border-[#06b6d4]/20">
+              <span className="font-mono text-sm font-semibold text-[#06b6d4] uppercase tracking-wider">VAULTI</span>
             </div>
           </div>
 
@@ -76,21 +76,21 @@ export function ParadigmShift() {
           {rows.map((row, i) => (
             <motion.div
               key={row.label}
-              initial={{ opacity: 0, x: -20 }}
+              initial={{ opacity: 0, x: -10 }}
               animate={isInView ? { opacity: 1, x: 0 } : {}}
-              transition={{ duration: 0.5, delay: 0.3 + i * 0.1 }}
-              className="grid grid-cols-[1fr_1.5fr_1.5fr] border-b border-border last:border-b-0 group"
+              transition={{ duration: 0.5, delay: 0.3 + i * 0.08 }}
+              className="grid grid-cols-[1fr_1.5fr_1.5fr] border-b border-[#06b6d4]/10 last:border-b-0"
             >
               <div className="p-4 flex items-center">
-                <span className="font-mono text-xs text-muted-foreground/70 uppercase tracking-wider">{row.label}</span>
+                <span className="font-mono text-sm font-medium text-slate-400">{row.label}</span>
               </div>
-              <div className="p-4 border-l border-border flex items-center gap-3 bg-red-950/10">
+              <div className="p-4 border-l border-[#06b6d4]/10 flex items-center gap-3 bg-red-950/10">
                 <X className="w-4 h-4 text-red-500/60 shrink-0" />
-                <span className="font-mono text-xs text-foreground/40">{row.bad}</span>
+                <span className="font-mono text-sm text-slate-500">{row.bad}</span>
               </div>
-              <div className="p-4 border-l border-primary/20 bg-primary/5 flex items-center gap-3">
-                <Check className="w-4 h-4 text-primary shrink-0 drop-shadow-[0_0_4px_rgba(6,182,212,0.8)]" />
-                <span className="font-mono text-xs text-foreground/90">{row.good}</span>
+              <div className="p-4 border-l border-[#06b6d4]/10 bg-[#06b6d4]/5 flex items-center gap-3">
+                <Check className="w-4 h-4 text-[#06b6d4] shrink-0" />
+                <span className="font-mono text-sm font-medium text-slate-300">{row.good}</span>
               </div>
             </motion.div>
           ))}
