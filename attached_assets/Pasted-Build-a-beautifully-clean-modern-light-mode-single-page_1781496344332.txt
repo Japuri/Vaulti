@@ -1,0 +1,33 @@
+Build a beautifully clean, modern, light-mode single-page marketing landing page for a private personal cloud storage service named "Vaulti" (a secure, open-source alternative to mainstream data monopolies).
+
+The tech stack must be React, Tailwind CSS, Lucide React icons, and Framer Motion for gentle, elegant, and fluid transitions.
+
+### 🧠 ACCURATE TRUST & TRANSPARENCY PSYCHOLOGY STRATEGY:
+1. Color Scheme: Approachable, high-trust professional palette. Clean off-white backgrounds (bg-slate-50), deep navy blue text (text-slate-900) for structural authority, and vibrant trust blue (blue-600) alongside secure emerald green (emerald-600) for action steps.
+2. Honest Technical Copy: Do NOT claim client-side zero-knowledge or end-to-end encryption. Instead, proudly state that Vaulti runs on automated Server-Side Data Isolation powered by the globally audited Nextcloud core architecture. Frame this honestly: "Your data is instantly scrambled into encrypted blocks upon hitting our hardware storage arrays—rendering files unreadable to structural browsing. We retain account management protocols specifically so we can safely recover your access if you ever lose your credentials."
+3. The Visual Guarantee: Design a clean, simplified vector animation component showing a family photo passing into a secure shield boundary, transforming into a neatly locked document graphic with an active checkmark. This illustrates to everyday users that their files are securely isolated and encrypted on the server layout without misleading them about the mechanism.
+
+### 🖥️ PAGE STRUCTURE & ARCHITECTURE:
+- STICKY NAVIGATION: A crisp white glassmorphism header featuring a friendly, pulsing green dot labeled "Vaulti Security Network: Online & Fully Protected".
+- ACCESSIBLE HERO SECTION: 
+  * Headline: "Reclaim Your Photos. Own Your Memories."
+  * Sub-headline: "Automated, full-resolution background backup for your phone's photos and videos. Driven by the globally vetted Nextcloud server architecture, your personal vault is securely isolated and encrypted. Professional storage protection without corporate tracking or data mining."
+  * Primary CTA Button: A welcoming, high-contrast trust-blue button reading "Set Up Your Private Vault".
+- THE TRANSPARENCY BLOCK (COMPARISON MATRIX): A highly readable, non-aggressive comparison table balancing "Corporate Clouds" (Data profiling, hidden AI library scanning, mandatory forever rent, compressed media) vs "Vaulti Open Architecture" (No data tracking, isolated server encryption, fixed subscription windows, absolute original quality).
+- SIMPLIFIED THREE-STEP JOURNEY: Clean, elegant cards explaining the effortless setup:
+  1. Secure Your Plan: Start a quick conversation with us via our secure chat link to allocate your vault space limits.
+  2. Account Verification: Receive your unique system registration link, create your account, and download the free Nextcloud application from the App Store.
+  3. Continuous Protection: Toggle "Auto-Backup" on your phone. Your photos seamlessly stream to your isolated, server-encrypted storage array in full original quality.
+- FRIENDLY CAPACITY PACKS: Elegant, elevated white cards with soft drop shadows:
+  * Lite Backup Pack: 50 GB Storage / 6-Month Active Vault / Fixed One-Time Payment.
+  * Extended Media Vault: 200 GB Storage / 1-Year Active Vault / Fixed One-Time Payment.
+  * Event & Trip Capsule: 100 GB Storage / 30-Day Automated Vault Archive / Fixed One-Time Payment.
+- ACCOMMODATING FAQ SECTION: Clean accordion menus addressing core technical realities: 
+  * "Why do you use the open-source Nextcloud core?" (Answer: For vetted, globally audited security transparency instead of unproven custom code).
+  * "Can the administrator browse my raw photos?" (Answer: No. Server-side architecture automatically scrambles incoming media assets into cryptographic blocks. Your account data remains strictly isolated).
+  * "What happens if I forget my password?" (Answer: Because we manage the encrypted server shell framework, you can contact us via our secure chat to safely reset your account without losing your life's memories).
+
+### ✨ GENTLE VISUAL EFFECTS REQUIRED:
+- Use smooth, natural fade-ins and subtle upward slides via Framer Motion as components enter the viewport.
+- Button and card hovers should display a gentle, soft drop-shadow scaling response rather than glowing neon matrices.
+- Maintain seamless web responsiveness with mobile-first viewport scaling optimized for everyday smartphones. Configure standard placeholder endpoints (`https://m.me/your_fb_username`) to smoothly redirect communication.

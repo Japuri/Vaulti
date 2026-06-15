@@ -25,7 +25,7 @@ export function Navigation() {
         <div className="hidden lg:flex items-center gap-2">
           <div className="w-2.5 h-2.5 rounded-full bg-emerald-500 animate-gentle-pulse" />
           <span className="text-xs text-slate-500 font-medium">
-            Vaulti Security Network: Active &amp; Fully Protected
+            Vaulti Security Network: Online &amp; Fully Protected
           </span>
         </div>
         <a

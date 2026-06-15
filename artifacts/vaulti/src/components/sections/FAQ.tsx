@@ -4,24 +4,24 @@ import { ChevronDown, HelpCircle } from "lucide-react";
 
 const faqs = [
   {
-    q: "Why do you use open-source Nextcloud?",
-    a: "We use the globally trusted, open-source Nextcloud core architecture because your privacy shouldn't be a corporate secret — it should be a verifiable guarantee. Open-source means anyone can audit the code, verify the encryption, and confirm there are no hidden backdoors. With closed-source systems, you simply have to trust the company's word. We believe trust should be earned through transparency, not demanded through obscurity.",
+    q: "Why do you use the open-source Nextcloud core?",
+    a: "Because your security shouldn't rest on our word alone. Nextcloud is a globally vetted, open-source server architecture whose code has been independently audited by security researchers worldwide. Using a proven, publicly inspectable foundation means you never have to trust unproven custom code — the safety guarantees are visible and verifiable by anyone.",
   },
   {
-    q: "How am I guaranteed absolute visual privacy?",
-    a: "Every photo and video is encrypted on your device using AES-256 before it ever reaches our servers. We receive only encrypted data — we cannot see, analyze, or display your files. Even if someone gained unauthorized access to our infrastructure, they would find only unreadable encrypted data. Your encryption keys are generated and stored on your device, never on our servers.",
+    q: "Can the administrator browse my raw photos?",
+    a: "No. The Nextcloud server-side architecture automatically scrambles incoming media assets into cryptographic blocks the moment they hit our hardware storage arrays. While we manage the encrypted server shell framework so we can keep your account running and support you if needed, your raw photo content is structurally isolated — no one on our team can browse or view your personal files through the storage layer.",
   },
   {
-    q: "How does the subscription window renewal process work?",
-    a: "When your storage period approaches its end, you'll receive a friendly notification with the option to renew. There is no automatic billing or surprise charges. You choose whether to renew, upgrade, or let your data be securely purged. You have full control over every aspect of your storage, always.",
+    q: "What happens if I forget my password?",
+    a: "Because we manage the encrypted server shell framework on your behalf, you can simply contact us via our secure chat to safely reset your account credentials. Unlike fully self-hosted systems where a forgotten password means permanent data loss, our model means we can restore your access securely — without compromising the privacy of your stored media.",
   },
   {
     q: "Can I access my files from multiple devices?",
-    a: "Yes! The Nextcloud app is available on iOS, Android, macOS, Windows, and Linux. Once your vault is set up, you can sync and access your encrypted files across all your devices. Each device decrypts files locally using your private credentials — seamlessly and securely.",
+    a: "Yes. The free Nextcloud app is available on iOS, Android, macOS, Windows, and Linux. Once your vault is set up, you can sync and access your files across all your devices — everything streams from your securely isolated server storage to whichever device you're using.",
   },
   {
-    q: "What happens if I need help setting up?",
-    a: "We guide you every step of the way via our secure chat. Most people are fully set up and backing up their photos within 10 minutes. There's no technical knowledge required — if you can use a smartphone, you can set up Vaulti. We're here whenever you need us.",
+    q: "How does the subscription window renewal work?",
+    a: "When your storage period approaches its end, you'll receive a friendly notification with the option to renew. There is no automatic billing or surprise charges — ever. You choose whether to renew, upgrade your capacity, or let your data be securely purged. Full control, always on your terms.",
   },
 ];
 
@@ -86,8 +86,11 @@ export function FAQ() {
             Common Questions
           </div>
           <h2 className="text-4xl md:text-5xl font-bold text-slate-900 mb-4">
-            Good Questions Deserve Honest Answers
+            Honest Answers to Real Questions
           </h2>
+          <p className="text-slate-500 max-w-xl mx-auto">
+            We believe transparency builds more trust than marketing claims. Here's exactly how Vaulti works.
+          </p>
         </motion.div>
 
         <div className="space-y-3">

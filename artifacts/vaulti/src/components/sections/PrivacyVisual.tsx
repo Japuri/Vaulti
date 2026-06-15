@@ -1,8 +1,8 @@
 import { useEffect, useRef, useState } from "react";
 import { motion, useInView, AnimatePresence } from "framer-motion";
-import { Shield, Lock, CheckCircle, Image } from "lucide-react";
+import { Shield, Lock, CheckCircle, Image, Server } from "lucide-react";
 
-type Phase = "photo" | "shielding" | "locked";
+type Phase = "photo" | "transferring" | "locked";
 
 export function PrivacyVisual() {
   const ref = useRef<HTMLDivElement>(null);
@@ -13,7 +13,7 @@ export function PrivacyVisual() {
     if (!isInView) return;
     const cycle = () => {
       setPhase("photo");
-      setTimeout(() => setPhase("shielding"), 1800);
+      setTimeout(() => setPhase("transferring"), 1800);
       setTimeout(() => setPhase("locked"), 3400);
       setTimeout(cycle, 6000);
     };
@@ -31,13 +31,13 @@ export function PrivacyVisual() {
         >
           <div className="inline-flex items-center gap-2 bg-blue-50 text-blue-700 border border-blue-100 px-4 py-2 rounded-full text-sm font-medium mb-6">
             <Shield className="w-4 h-4" />
-            How Your Privacy Works
+            Server-Side Data Isolation
           </div>
           <h2 className="text-4xl md:text-5xl font-bold text-slate-900 mb-4">
-            Your Files. Yours Alone.
+            Your Files. Securely Isolated.
           </h2>
           <p className="text-lg text-slate-500 max-w-2xl mx-auto">
-            Every photo is encrypted on your device before it ever travels to our servers. We only ever receive unreadable, locked data.
+            The moment your photos reach our hardware, they're automatically scrambled into encrypted blocks — rendering them structurally unreadable to anyone browsing the storage layer.
           </p>
         </motion.div>
 
@@ -66,13 +66,13 @@ export function PrivacyVisual() {
                       <Image className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-6 h-6 text-white/60" />
                     </div>
                   </div>
-                  <span className="text-sm text-slate-500 font-medium">Your original family photo</span>
+                  <span className="text-sm text-slate-500 font-medium">Your original full-resolution photo</span>
                 </motion.div>
               )}
 
-              {phase === "shielding" && (
+              {phase === "transferring" && (
                 <motion.div
-                  key="shielding"
+                  key="transferring"
                   initial={{ opacity: 0, scale: 0.8 }}
                   animate={{ opacity: 1, scale: 1 }}
                   exit={{ opacity: 0, scale: 1.05 }}
@@ -86,7 +86,10 @@ export function PrivacyVisual() {
                   >
                     <Shield className="w-12 h-12 text-blue-600" />
                   </motion.div>
-                  <span className="text-sm text-blue-600 font-semibold animate-pulse">Encrypting on your device…</span>
+                  <div className="flex items-center gap-2 text-blue-600 font-semibold text-sm animate-pulse">
+                    <Server className="w-4 h-4" />
+                    Server isolating &amp; encrypting…
+                  </div>
                 </motion.div>
               )}
 
@@ -111,7 +114,7 @@ export function PrivacyVisual() {
                       <CheckCircle className="w-5 h-5 text-white" />
                     </motion.div>
                   </div>
-                  <span className="text-sm text-emerald-700 font-semibold">Safely stored. Completely private.</span>
+                  <span className="text-sm text-emerald-700 font-semibold">Encrypted &amp; Isolated on our hardware.</span>
                 </motion.div>
               )}
             </AnimatePresence>
@@ -129,25 +132,25 @@ export function PrivacyVisual() {
                 icon: Image,
                 color: "blue",
                 title: "Full-Resolution Originals",
-                desc: "Unlike Google Photos or iCloud, we never compress your memories. Every pixel is preserved exactly as your camera captured it.",
+                desc: "Unlike Google Photos or iCloud, we never compress or re-encode your memories. Every pixel is preserved exactly as your camera captured it.",
               },
               {
                 icon: Shield,
                 color: "blue",
-                title: "Device-Side Encryption",
-                desc: "Your files are encrypted using AES-256 on your own phone before they leave. Our servers never receive anything readable.",
+                title: "Automatic Server-Side Isolation",
+                desc: "The instant your files reach our storage arrays, the Nextcloud architecture scrambles them into encrypted blocks. No one can browse your raw photos through the storage layer.",
               },
               {
                 icon: Lock,
                 color: "emerald",
-                title: "Zero Admin Visibility",
-                desc: "Not even our own infrastructure team can see your photos. The cryptographic architecture makes it structurally impossible.",
+                title: "No Data Profiling or AI Scanning",
+                desc: "Your media is never analysed, sold, or fed into AI training pipelines. We store it. That's it. No corporate surveillance, no hidden scanning.",
               },
               {
                 icon: CheckCircle,
                 color: "emerald",
-                title: "Open-Source & Auditable",
-                desc: 'We use the globally trusted Nextcloud core — because your privacy shouldn\'t be a corporate secret, it should be a verifiable guarantee.',
+                title: "Open-Source & Globally Audited",
+                desc: "We use the Nextcloud core — not custom, unproven code. Its security architecture is publicly audited by independent researchers worldwide, so you never have to take our word for it.",
               },
             ].map((item, i) => {
               const Icon = item.icon;

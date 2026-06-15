@@ -14,7 +14,7 @@ export function Hero() {
           className="inline-flex items-center gap-2 bg-emerald-50 text-emerald-700 border border-emerald-200 px-4 py-2 rounded-full text-sm font-medium mb-8"
         >
           <span className="w-2 h-2 rounded-full bg-emerald-500 animate-gentle-pulse" />
-          Powered by open-source Nextcloud — verifiable privacy
+          Powered by open-source Nextcloud — globally audited security
         </motion.div>
 
         <motion.h1
@@ -33,8 +33,8 @@ export function Hero() {
           transition={{ duration: 0.7, delay: 0.3 }}
           className="text-lg md:text-xl text-slate-600 mb-12 max-w-3xl mx-auto leading-relaxed"
         >
-          Automated, full-resolution background backup for your phone's photos and videos. Powered by the globally trusted, open-source Nextcloud engine, your vault is completely private.{" "}
-          <span className="font-semibold text-slate-800">Not even the system administrator can ever view your files.</span>
+          Automated, full-resolution background backup for your phone's photos and videos. Driven by the globally vetted Nextcloud server architecture, your personal vault is securely isolated and encrypted.{" "}
+          <span className="font-semibold text-slate-800">Professional storage protection without corporate tracking or data mining.</span>
         </motion.p>
 
         <motion.div
@@ -66,10 +66,10 @@ export function Hero() {
           className="mt-16 flex flex-wrap items-center justify-center gap-8 text-sm text-slate-500"
         >
           {[
-            "AES-256 Encrypted",
+            "Server-Side Encryption",
             "No Data Profiling",
             "Open-Source Verified",
-            "Zero Admin Access",
+            "Fixed Subscription Windows",
           ].map((badge) => (
             <div key={badge} className="flex items-center gap-2">
               <span className="w-1.5 h-1.5 rounded-full bg-emerald-500" />

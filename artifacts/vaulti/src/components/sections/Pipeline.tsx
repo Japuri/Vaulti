@@ -1,6 +1,6 @@
 import { useRef } from "react";
 import { motion, useInView } from "framer-motion";
-import { MessageSquare, KeyRound, Smartphone } from "lucide-react";
+import { MessageSquare, UserCheck, Smartphone } from "lucide-react";
 
 const steps = [
   {
@@ -9,15 +9,15 @@ const steps = [
     color: "blue",
     title: "Secure Your Plan",
     description:
-      "Start a simple conversation with us via our secure chat link. We'll allocate your vault space and walk you through everything — no technical knowledge needed.",
+      "Start a quick conversation with us via our secure chat link. We'll walk you through your options and allocate your vault space limits — no technical knowledge needed at all.",
   },
   {
     number: "02",
-    icon: KeyRound,
+    icon: UserCheck,
     color: "blue",
-    title: "Quick App Connection",
+    title: "Account Verification",
     description:
-      "Create your private credentials via a secure, one-time link we send you. Then download the free, trusted Nextcloud app from the App Store or Google Play.",
+      "Receive your unique system registration link, create your account, and download the free Nextcloud application from the App Store or Google Play. Setup takes less than five minutes.",
   },
   {
     number: "03",
@@ -25,7 +25,7 @@ const steps = [
     color: "emerald",
     title: "Continuous Protection",
     description:
-      "Toggle Auto-Backup on your phone. Your photos are encrypted locally on your device before saving safely to your private storage cluster — automatically, every day.",
+      "Toggle Auto-Backup on your phone. Your photos seamlessly stream to your isolated, server-encrypted storage array in full original quality — automatically, every single day.",
   },
 ];
 
