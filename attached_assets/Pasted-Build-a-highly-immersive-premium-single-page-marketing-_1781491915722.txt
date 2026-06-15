@@ -1,0 +1,30 @@
+Build a highly immersive, premium, single-page marketing landing page for a decentralized, next-generation personal cloud storage service named "Vaulti" (an uncompromising, zero-knowledge alternative to Google Photos and mainstream cloud monopolies).
+
+The tech stack must be React, Tailwind CSS, Lucide React icons, and Framer Motion for cinematic, high-performance transitions.
+
+### 🧠 PSYCHOLOGICAL TRUST STRATEGY & MARKETING TONE:
+1. Copywriting Posture: Act as an elite, high-end digital security agency. Use authoritative, luxury-tech phrasing ("Reclaim Data Sovereignty," "Uncompromising Encryption," "Blind-Node Hosting"). Avoid amateur or casual slang. 
+2. Color Psychology: Deep Midnight Slate background (#080c14) juxtaposed with Quantum Cyan (#06b6d4) and Sovereign Silver text. This palette commands institutional trust and high-end security.
+3. The "Blind-Node" Visualization Component: Create an interactive graphic displaying a mock user photo entering a portal and shattering into live cryptographic matrix blocks to visually prove that the host/administrator is 100% blind to their files.
+
+### 🖥️ PAGE STRUCTURE & ARCHITECTURE:
+- STICKY NAVIGATION: Transparent glassmorphism header featuring a glowing "Node Matrix Status: Operational" green-pulse beacon to project enterprise-grade infrastructure.
+- MASTER HERO SECTION: 
+  * Headline: "Your Memories Are Not Public Property."
+  * Sub-headline: "True zero-knowledge cloud storage. Automatically back up your phone's full-resolution 4K media with absolute cryptographic isolation. Not even the server infrastructure administrator can view your files."
+  * CTA: A high-contrast, glowing action button reading "Initialize Your Vault via Secure Chat".
+- THE PARADIGM SHIFT (COMPARISON MATRIX): A stark, scannable table contrasting "Monopolistic Clouds" (Data Aggregation, Compressed Media, Perpetual Rent) vs "Vaulti" (Zero-Knowledge E2EE, Bit-for-Bit Original Quality, Flat Fixed Packs).
+- OPERATIONAL PIPELINE (HOW IT WORKS): Fluid, scroll-triggered chronological cards detailing the friction-free transition:
+  1. Secure Provisioning: Select a fixed-tier vault space and clear allocation details through our verified secure direct chat interface.
+  2. Cryptographic Onboarding: Instantly receive a randomized, unindexed system token gateway link to configure your custom credentials.
+  3. Client-Side Deployment: Initialize your preferred native application and toggle "Automated Background Sync." Your phone encrypts data locally before it ever crosses the wire.
+- PREMIUM CAPACITY CARDS: Sleek hover-reactive glass cards featuring concrete storage metrics:
+  * Lite Capsule: 50 GB Vault / 6-Month Autonomous Hosting / Flat Allocation Rate.
+  * Quantum Vault: 200 GB Vault / 1-Year Autonomous Hosting / Premium Allocation Rate.
+  * Ephemeral Capsule: 100 GB Vault / 30-Day Automated Space Purge / Project Allocation Rate.
+- TRUST ACCORDION (FAQ): Interactive tabs resolving elite user objections: "How is the Admin prevented from structural browsing?", "What happens to encrypted blocks upon cycle expiration?", and "Can I securely migrate my existing libraries?"
+
+### ✨ KINETIC TRANSITIONS & EFFECTS REQUIRED:
+- Smooth scroll-reveal viewport configurations utilizing Framer Motion (staggered children entries, micro-spring responses on interactive buttons).
+- Border illumination physics: Hovering over action modules or pricing tiers triggers a precise gradient tracer around the component's perimeter.
+- Maintain seamless web responsiveness with mobile-first viewport scaling optimized for fluid execution. Use universal chat anchors (`https://m.me/your_fb_username` configured as standard placeholders) to map user execution cleanly.

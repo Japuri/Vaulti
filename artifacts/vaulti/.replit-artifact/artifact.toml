@@ -1,0 +1,31 @@
+kind = "web"
+previewPath = "/"
+title = "Vaulti"
+version = "1.0.0"
+id = "artifacts/vaulti"
+router = "path"
+
+[[integratedSkills]]
+name = "react-vite"
+version = "1.0.0"
+
+[[services]]
+name = "web"
+paths = [ "/" ]
+localPort = 19337
+
+[services.development]
+run = "pnpm --filter @workspace/vaulti run dev"
+
+[services.production]
+build = [ "pnpm", "--filter", "@workspace/vaulti", "run", "build" ]
+publicDir = "artifacts/vaulti/dist/public"
+serve = "static"
+
+[[services.production.rewrites]]
+from = "/*"
+to = "/index.html"
+
+[services.env]
+PORT = "19337"
+BASE_PATH = "/"
