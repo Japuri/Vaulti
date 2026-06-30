@@ -1,6 +1,6 @@
 import { useRef } from "react";
 import { motion, useInView } from "framer-motion";
-import { Clock, Zap, Camera, Check, ArrowRight } from "lucide-react";
+import { Clock, Zap, Camera, Check, ArrowRight, TrendingDown, AlertTriangle } from "lucide-react";
 
 const tiers = [
   {
@@ -8,15 +8,15 @@ const tiers = [
     name: "Lite Backup Pack",
     storage: "50 GB",
     duration: "6-Month Active Vault",
-    pricing: "Fixed One-Time Payment",
-    tagline: "Great for getting started",
+    pricing: "One Fixed Payment",
+    tagline: "Start small, start safe",
     featured: false,
     features: [
       "Full-resolution photo backup",
-      "Auto-sync enabled",
-      "AES-256 encryption",
-      "6 months of secure storage",
-      "Nextcloud app access",
+      "Auto-sync in the background",
+      "Server-side encryption",
+      "6 months of secure private storage",
+      "Access via any device, anytime",
     ],
   },
   {
@@ -24,18 +24,18 @@ const tiers = [
     name: "Extended Media Vault",
     storage: "200 GB",
     duration: "1-Year Active Vault",
-    pricing: "Fixed One-Time Payment",
-    tagline: "Most popular choice",
+    pricing: "One Fixed Payment",
+    tagline: "Best protection, best value",
     featured: true,
-    badge: "Best Value",
+    badge: "Recommended",
     features: [
-      "Full-resolution photo & video backup",
-      "Auto-sync enabled",
-      "AES-256 encryption",
-      "12 months of secure storage",
-      "Nextcloud app access",
-      "Priority support",
-      "Migration assistance",
+      "Full-resolution photos & videos",
+      "Auto-sync in the background",
+      "Server-side encryption",
+      "12 months of secure private storage",
+      "Access via any device, anytime",
+      "Priority support response",
+      "Migration assistance included",
     ],
   },
   {
@@ -43,15 +43,15 @@ const tiers = [
     name: "Event & Trip Capsule",
     storage: "100 GB",
     duration: "30-Day Automated Vault",
-    pricing: "Fixed One-Time Payment",
-    tagline: "Perfect for events & travel",
+    pricing: "One Fixed Payment",
+    tagline: "Perfect for trips & milestones",
     featured: false,
     features: [
-      "Full-resolution photo & video backup",
-      "Auto-sync enabled",
-      "AES-256 encryption",
-      "30-day vault archive",
-      "Nextcloud app access",
+      "Full-resolution photos & videos",
+      "Auto-sync in the background",
+      "Server-side encryption",
+      "30-day vault archive window",
+      "Access via any device, anytime",
     ],
   },
 ];
@@ -67,17 +67,39 @@ export function Pricing() {
           initial={{ opacity: 0, y: 20 }}
           animate={isInView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.7 }}
-          className="text-center mb-14"
+          className="text-center mb-10"
         >
           <div className="inline-flex items-center gap-2 bg-blue-50 text-blue-700 border border-blue-100 px-4 py-2 rounded-full text-sm font-medium mb-5">
             Simple, transparent pricing
           </div>
           <h2 className="text-4xl md:text-5xl font-bold text-slate-900 mb-4">
-            No Subscriptions. No Surprises.
+            Pay Once. Walk Away Anytime.
           </h2>
           <p className="text-lg text-slate-500 max-w-2xl mx-auto">
-            One fixed payment. Your vault runs for the full period. Renew when you're ready — on your terms.
+            You choose your period. You pay once. You renew when — and only if — you decide to. No auto-billing. No cancellation traps.
           </p>
+        </motion.div>
+
+        {/* Financial insight banner */}
+        <motion.div
+          initial={{ opacity: 0, y: 16 }}
+          animate={isInView ? { opacity: 1, y: 0 } : {}}
+          transition={{ duration: 0.6, delay: 0.15 }}
+          className="bg-white border border-amber-200 rounded-2xl p-5 mb-10 flex flex-col md:flex-row items-start md:items-center gap-4 shadow-sm"
+        >
+          <div className="flex items-center gap-3 shrink-0">
+            <div className="w-10 h-10 rounded-xl bg-amber-50 flex items-center justify-center">
+              <AlertTriangle className="w-5 h-5 text-amber-500" />
+            </div>
+            <span className="font-bold text-slate-900 text-sm">What typical cloud really costs you:</span>
+          </div>
+          <p className="text-sm text-slate-500 leading-relaxed">
+            A standard monthly storage plan billed over 3 years quietly accumulates into a significant sum — while the provider profits from scanning, analysing, and leveraging your personal media. With Vaulti, you pay per defined period only, and your data is never an asset that funds someone else's business model.
+          </p>
+          <div className="flex items-center gap-2 shrink-0 text-emerald-700 font-semibold text-sm">
+            <TrendingDown className="w-4 h-4" />
+            Lower long-term cost
+          </div>
         </motion.div>
 
         <div className="grid md:grid-cols-3 gap-6 items-start">
@@ -88,7 +110,7 @@ export function Pricing() {
                 key={tier.name}
                 initial={{ opacity: 0, y: 36 }}
                 animate={isInView ? { opacity: 1, y: 0 } : {}}
-                transition={{ duration: 0.6, delay: 0.15 + i * 0.12 }}
+                transition={{ duration: 0.6, delay: 0.2 + i * 0.12 }}
                 className={`relative bg-white rounded-2xl overflow-hidden card-hover ${
                   tier.featured
                     ? "border-2 border-blue-600 shadow-xl shadow-blue-100"
@@ -125,7 +147,7 @@ export function Pricing() {
                   </div>
 
                   <a
-                    href="https://m.me/your_fb_username"
+                    href="mailto:japuri0318@gmail.com"
                     className={`flex items-center justify-center gap-2 w-full py-3.5 rounded-xl font-semibold text-sm transition-all duration-200 ${
                       tier.featured
                         ? "bg-blue-600 text-white hover:bg-blue-700 shadow-md hover:shadow-blue-200 hover:shadow-lg"
@@ -140,6 +162,16 @@ export function Pricing() {
             );
           })}
         </div>
+
+        {/* Bottom reassurance */}
+        <motion.p
+          initial={{ opacity: 0 }}
+          animate={isInView ? { opacity: 1 } : {}}
+          transition={{ duration: 0.6, delay: 0.6 }}
+          className="text-center text-sm text-slate-400 mt-8"
+        >
+          No automatic renewals. No hidden fees. Contact us anytime to adjust, upgrade, or cancel — we respond fast.
+        </motion.p>
       </div>
     </section>
   );

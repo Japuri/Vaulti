@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import { Shield, ArrowRight } from "lucide-react";
+import { Shield, ArrowRight, Mail } from "lucide-react";
 
 export function Footer() {
   return (
@@ -28,7 +28,7 @@ export function Footer() {
           </motion.p>
 
           <motion.a
-            href="https://m.me/your_fb_username"
+            href="mailto:japuri0318@gmail.com"
             initial={{ opacity: 0, scale: 0.95 }}
             whileInView={{ opacity: 1, scale: 1 }}
             transition={{ duration: 0.5, delay: 0.25 }}
@@ -51,7 +51,11 @@ export function Footer() {
           </div>
 
           <div className="flex items-center gap-6">
-            {["Privacy Policy", "Terms of Service", "Contact Us"].map((link) => (
+            <a href="mailto:japuri0318@gmail.com" className="flex items-center gap-1.5 text-sm text-slate-500 hover:text-white transition-colors duration-200">
+              <Mail className="w-3.5 h-3.5" />
+              japuri0318@gmail.com
+            </a>
+            {["Privacy Policy", "Terms of Service"].map((link) => (
               <a
                 key={link}
                 href="#"

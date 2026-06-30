@@ -14,10 +14,12 @@ export function Navigation() {
         <span className="text-lg font-bold tracking-tight text-slate-900">Vaulti</span>
       </div>
 
-      <div className="hidden md:flex items-center gap-8 text-sm text-slate-600 font-medium">
+      <div className="hidden md:flex items-center gap-7 text-sm text-slate-600 font-medium">
         <a href="#features" className="hover:text-blue-600 transition-colors duration-200">Features</a>
-        <a href="#how-it-works" className="hover:text-blue-600 transition-colors duration-200">How It Works</a>
+        <a href="#solutions" className="hover:text-blue-600 transition-colors duration-200">Solutions</a>
         <a href="#pricing" className="hover:text-blue-600 transition-colors duration-200">Pricing</a>
+        <a href="#why-us" className="hover:text-blue-600 transition-colors duration-200">Why Us</a>
+        <a href="#about" className="hover:text-blue-600 transition-colors duration-200">About</a>
         <a href="#faq" className="hover:text-blue-600 transition-colors duration-200">FAQ</a>
       </div>
 
@@ -29,7 +31,7 @@ export function Navigation() {
           </span>
         </div>
         <a
-          href="https://m.me/your_fb_username"
+          href="mailto:japuri0318@gmail.com"
           className="bg-blue-600 text-white px-4 py-2 rounded-lg text-sm font-semibold hover:bg-blue-700 transition-colors duration-200 shadow-sm"
         >
           Set Up Your Vault

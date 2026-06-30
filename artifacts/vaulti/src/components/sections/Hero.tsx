@@ -14,7 +14,7 @@ export function Hero() {
           className="inline-flex items-center gap-2 bg-emerald-50 text-emerald-700 border border-emerald-200 px-4 py-2 rounded-full text-sm font-medium mb-8"
         >
           <span className="w-2 h-2 rounded-full bg-emerald-500 animate-gentle-pulse" />
-          Powered by open-source Nextcloud — globally audited security
+          Powered by globally audited open-source architecture
         </motion.div>
 
         <motion.h1
@@ -33,8 +33,8 @@ export function Hero() {
           transition={{ duration: 0.7, delay: 0.3 }}
           className="text-lg md:text-xl text-slate-600 mb-12 max-w-3xl mx-auto leading-relaxed"
         >
-          Automated, full-resolution background backup for your phone's photos and videos. Driven by the globally vetted Nextcloud server architecture, your personal vault is securely isolated and encrypted.{" "}
-          <span className="font-semibold text-slate-800">Professional storage protection without corporate tracking or data mining.</span>
+          Automated, full-resolution background backup for your phone's photos and videos — stored in your own private server vault.{" "}
+          <span className="font-semibold text-slate-800">No corporate tracking. No AI scanning. No data mining. Just your memories, securely yours.</span>
         </motion.p>
 
         <motion.div
@@ -44,7 +44,7 @@ export function Hero() {
           className="flex flex-col sm:flex-row items-center gap-4 justify-center"
         >
           <a
-            href="https://m.me/your_fb_username"
+            href="mailto:japuri0318@gmail.com"
             className="inline-flex items-center gap-2 bg-blue-600 text-white px-8 py-4 rounded-xl font-semibold text-lg hover:bg-blue-700 transition-all duration-200 shadow-lg hover:shadow-xl hover:shadow-blue-200"
           >
             Set Up Your Private Vault

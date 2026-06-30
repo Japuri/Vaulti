@@ -5,33 +5,33 @@ import { X, Check } from "lucide-react";
 const rows = [
   {
     label: "Privacy Model",
-    bad: "Data profiling & tracking",
+    bad: "Data profiling & behavioral tracking",
     good: "No tracking — ever",
   },
   {
     label: "AI Scanning",
-    bad: "Hidden AI library scanning",
+    bad: "Hidden AI library scanning of your files",
     good: "Zero scanning or analysis",
   },
   {
     label: "Photo Quality",
     bad: "Compressed, lossy uploads",
-    good: "Absolute original quality",
+    good: "Absolute original quality preserved",
   },
   {
     label: "Pricing",
-    bad: "Mandatory forever rent",
-    good: "Fixed subscription windows",
+    bad: "Perpetual monthly billing — forever",
+    good: "Fixed windows, pay when ready",
   },
   {
     label: "File Encryption",
-    bad: "Accessible to corporate teams",
-    good: "Isolated server encryption",
+    bad: "Accessible to corporate & third-party teams",
+    good: "Isolated server-side encryption",
   },
   {
-    label: "Code",
+    label: "Code Transparency",
     bad: "Closed, proprietary black box",
-    good: "Globally audited Nextcloud core",
+    good: "Publicly audited open-source core",
   },
 ];
 
@@ -52,10 +52,10 @@ export function ParadigmShift() {
             The honest comparison
           </div>
           <h2 className="text-4xl md:text-5xl font-bold text-slate-900 mb-4">
-            Corporate Cloud vs. Vaulti
+            Standard Cloud vs. Vaulti
           </h2>
           <p className="text-lg text-slate-500 max-w-2xl mx-auto">
-            See exactly what you're giving up with the big providers — and what you get back with Vaulti's open architecture.
+            See exactly what you're giving up with typical big-name providers — and what you get back when you own your storage.
           </p>
         </motion.div>
 
@@ -68,7 +68,7 @@ export function ParadigmShift() {
           <div className="grid grid-cols-[1fr_1.4fr_1.4fr]">
             <div className="p-4 bg-slate-50 border-b border-slate-100" />
             <div className="p-4 bg-red-50/50 border-b border-l border-slate-100">
-              <span className="text-sm font-bold text-red-600 uppercase tracking-wide">Corporate Clouds</span>
+              <span className="text-sm font-bold text-red-600 uppercase tracking-wide">Typical Cloud Services</span>
             </div>
             <div className="p-4 bg-emerald-50/50 border-b border-l border-slate-100">
               <span className="text-sm font-bold text-emerald-700 uppercase tracking-wide">Vaulti Open Architecture</span>
