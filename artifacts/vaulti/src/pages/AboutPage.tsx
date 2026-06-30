@@ -131,7 +131,7 @@ export function AboutPage() {
             </div>
 
             <div>
-              <h2 className="text-3xl font-bold text-slate-900 mb-1">Japuri</h2>
+              <h2 className="text-3xl font-bold text-slate-900 mb-1">Jakob Edhel A Puri</h2>
               <p className="text-blue-600 font-semibold text-sm mb-4">Founder & Technical Lead, Vaulti</p>
 
               <div className="flex flex-wrap gap-2">
@@ -157,23 +157,31 @@ export function AboutPage() {
             initial={{ opacity: 0, x: 30 }}
             animate={storyInView ? { opacity: 1, x: 0 } : {}}
             transition={{ duration: 0.7, delay: 0.15 }}
-            className="space-y-5 text-slate-600 text-base leading-relaxed"
+            className="flex flex-col justify-center h-full"
           >
-            <p className="text-xl font-semibold text-slate-900 leading-snug">
-              "I built Vaulti because I was frustrated — and I suspected a lot of other people were too."
-            </p>
-            <p>
-              Every photo backup service I tried came with fine print I didn't agree with. Compressed files. Perpetual billing. Quiet clauses about using your content to train AI systems. Accounts that could be suspended without notice, taking years of memories with them.
-            </p>
-            <p>
-              I knew the technology existed to do this properly — to give someone their own private, encrypted server vault that backed up their photos in full resolution, with no one else involved. I just had to build it in a way that normal people could actually use.
-            </p>
-            <p>
-              That's what Vaulti is. Not a startup with investor pressure. Not a platform trying to monetise your data. Just a focused, professionally run service built by someone who genuinely wants your files to be safe, private, and yours.
-            </p>
-            <p>
-              I handle everything personally — infrastructure, security, support, and maintenance. When you message me, you're talking to the person who actually built and runs the system. I think that matters.
-            </p>
+            {/* Pull quote */}
+            <div className="border-l-4 border-blue-600 pl-6 mb-8">
+              <p className="text-2xl md:text-3xl font-bold italic text-slate-900 leading-snug">
+                "Most platforms profit from your data. I built the alternative."
+              </p>
+            </div>
+
+            <div className="space-y-4 italic text-slate-500 text-base leading-relaxed">
+              <p>
+                I started Vaulti after realising that private, secure storage was well within reach technically — but completely inaccessible to everyday people. The tools existed. The knowledge didn't.
+              </p>
+              <p>
+                So I closed that gap. Vaulti is what happens when you stop accepting the trade-off between convenience and privacy.
+              </p>
+              <p>
+                I run everything personally. Infrastructure, support, security — all of it. When you reach out, you get me. That's not a limitation. That's the point.
+              </p>
+            </div>
+
+            <div className="mt-8 pt-6 border-t border-slate-100">
+              <p className="text-xs font-bold uppercase tracking-widest text-slate-400 mb-1">Jakob Edhel A Puri</p>
+              <p className="text-sm text-slate-500">Founder & Technical Lead — Vaulti</p>
+            </div>
           </motion.div>
         </div>
       </section>
