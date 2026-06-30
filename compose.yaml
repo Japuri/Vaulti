@@ -1,0 +1,13 @@
+services:
+  vaultti:
+    build: .
+    container_name: vaultti
+
+    restart: unless-stopped
+
+    networks:
+      - homelab
+
+networks:
+  homelab:
+    external: true

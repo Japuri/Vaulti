@@ -1,0 +1,16 @@
+$ vite build --config vite.config.ts
+failed to load config from /home/shao/docker/Vaulti/artifacts/vaulti/vite.config.ts
+error during build:
+Error: PORT environment variable is required but was not provided.
+    at file:///home/shao/docker/Vaulti/artifacts/vaulti/node_modules/.vite-temp/vite.config.ts.timestamp-1782777859041-51033a0c686c5.mjs:10:9
+    at ModuleJob.run (node:internal/modules/esm/module_job:439:25)
+    at async node:internal/modules/esm/loader:643:26
+    at async loadConfigFromBundledFile (file:///home/shao/docker/Vaulti/node_modules/.pnpm/vite@7.3.3_@types+node@25.6.2_jiti@2.7.0_lightningcss@1.32.0_tsx@4.21.0_yaml@2.8.4/node_modules/vite/dist/node/chunks/config.js:35936:12)
+    at async bundleAndLoadConfigFile (file:///home/shao/docker/Vaulti/node_modules/.pnpm/vite@7.3.3_@types+node@25.6.2_jiti@2.7.0_lightningcss@1.32.0_tsx@4.21.0_yaml@2.8.4/node_modules/vite/dist/node/chunks/config.js:35824:17)
+    at async loadConfigFromFile (file:///home/shao/docker/Vaulti/node_modules/.pnpm/vite@7.3.3_@types+node@25.6.2_jiti@2.7.0_lightningcss@1.32.0_tsx@4.21.0_yaml@2.8.4/node_modules/vite/dist/node/chunks/config.js:35791:42)
+    at async resolveConfig (file:///home/shao/docker/Vaulti/node_modules/.pnpm/vite@7.3.3_@types+node@25.6.2_jiti@2.7.0_lightningcss@1.32.0_tsx@4.21.0_yaml@2.8.4/node_modules/vite/dist/node/chunks/config.js:35440:22)
+    at async createBuilder (file:///home/shao/docker/Vaulti/node_modules/.pnpm/vite@7.3.3_@types+node@25.6.2_jiti@2.7.0_lightningcss@1.32.0_tsx@4.21.0_yaml@2.8.4/node_modules/vite/dist/node/chunks/config.js:33895:19)
+    at async CAC.<anonymous> (file:///home/shao/docker/Vaulti/node_modules/.pnpm/vite@7.3.3_@types+node@25.6.2_jiti@2.7.0_lightningcss@1.32.0_tsx@4.21.0_yaml@2.8.4/node_modules/vite/dist/node/cli.js:629:10)
+/home/shao/docker/Vaulti/artifacts/vaulti:
+[ERR_PNPM_RECURSIVE_RUN_FIRST_FAIL] @workspace/vaulti@0.0.0 build: `vite build --config vite.config.ts`
+Exit status 1
