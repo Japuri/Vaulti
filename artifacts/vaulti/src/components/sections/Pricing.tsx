@@ -1,57 +1,80 @@
 import { useRef } from "react";
 import { motion, useInView } from "framer-motion";
-import { Clock, Zap, Camera, Check, ArrowRight, TrendingDown, AlertTriangle } from "lucide-react";
+import { Check, Zap, ArrowRight, Star } from "lucide-react";
 
 const tiers = [
   {
-    icon: Clock,
-    name: "Lite Backup Pack",
-    storage: "50 GB",
-    duration: "6-Month Active Vault",
-    pricing: "One Fixed Payment",
-    tagline: "Start small, start safe",
+    name: "Free Starter Vault",
+    price: "Free",
+    priceNote: "No credit card needed",
+    storage: "10 GB",
+    tagline: "See for yourself.",
+    description: "Try Vaulti before you commit. Full-resolution backup, real private storage — at zero cost. When you see how it works, upgrading is easy.",
     featured: false,
+    badge: null,
+    cta: "Start free",
     features: [
-      "Full-resolution photo backup",
-      "Auto-sync in the background",
+      "10 GB private storage",
+      "Full-resolution backup",
+      "Auto-sync on any device",
       "Server-side encryption",
-      "6 months of secure private storage",
-      "Access via any device, anytime",
     ],
   },
   {
-    icon: Zap,
-    name: "Extended Media Vault",
-    storage: "200 GB",
-    duration: "1-Year Active Vault",
-    pricing: "One Fixed Payment",
-    tagline: "Best protection, best value",
-    featured: true,
-    badge: "Recommended",
-    features: [
-      "Full-resolution photos & videos",
-      "Auto-sync in the background",
-      "Server-side encryption",
-      "12 months of secure private storage",
-      "Access via any device, anytime",
-      "Priority support response",
-      "Migration assistance included",
-    ],
-  },
-  {
-    icon: Camera,
     name: "Event & Trip Capsule",
-    storage: "100 GB",
-    duration: "30-Day Automated Vault",
-    pricing: "One Fixed Payment",
-    tagline: "Perfect for trips & milestones",
+    price: "₱199",
+    priceNote: "per month",
+    storage: "50 GB",
+    tagline: "For occasional backups.",
+    description: "Travel memories. Birthday shoots. Holiday photos. Enough space for the moments that matter, without paying for what you don't need.",
     featured: false,
+    badge: null,
+    cta: "Get started",
     features: [
-      "Full-resolution photos & videos",
-      "Auto-sync in the background",
+      "50 GB private storage",
+      "Full-resolution backup",
+      "Auto-sync on any device",
       "Server-side encryption",
-      "30-day vault archive window",
-      "Access via any device, anytime",
+      "Cancel anytime",
+    ],
+  },
+  {
+    name: "Lite Backup Pack",
+    price: "₱399",
+    priceNote: "per month",
+    storage: "150 GB",
+    tagline: "For everyday personal backup.",
+    description: "Your daily life creates more than you think. 150 GB keeps years of photos and videos safe — automatically, silently, always.",
+    featured: false,
+    badge: null,
+    cta: "Get started",
+    features: [
+      "150 GB private storage",
+      "Full-resolution backup",
+      "Auto-sync on any device",
+      "Server-side encryption",
+      "Priority support",
+      "Cancel anytime",
+    ],
+  },
+  {
+    name: "Extended Media Vault",
+    price: "₱799",
+    priceNote: "per month",
+    storage: "500 GB",
+    tagline: "Best for families & creators.",
+    description: "RAW files. 4K video. A whole family's worth of memories. 500 GB means you never have to choose what to keep — and neither does anyone else in the family.",
+    featured: true,
+    badge: "⭐ Recommended",
+    cta: "Get the best plan",
+    features: [
+      "500 GB private storage",
+      "Full-resolution backup",
+      "Auto-sync on any device",
+      "Server-side encryption",
+      "Priority support",
+      "Migration assistance",
+      "Cancel anytime",
     ],
   },
 ];
@@ -61,117 +84,133 @@ export function Pricing() {
   const isInView = useInView(ref, { once: true, margin: "-100px" });
 
   return (
-    <section id="pricing" ref={ref} className="py-24 px-4 bg-slate-50">
-      <div className="max-w-5xl mx-auto">
+    <section id="pricing" ref={ref} className="py-28 px-4 bg-slate-50">
+      <div className="max-w-6xl mx-auto">
+
+        {/* Header */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={isInView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.7 }}
-          className="text-center mb-10"
+          className="text-center mb-6"
         >
-          <div className="inline-flex items-center gap-2 bg-blue-50 text-blue-700 border border-blue-100 px-4 py-2 rounded-full text-sm font-medium mb-5">
-            Simple, transparent pricing
-          </div>
+          <p className="text-xs font-bold uppercase tracking-widest text-blue-500 mb-4">Pricing</p>
           <h2 className="text-4xl md:text-5xl font-bold text-slate-900 mb-4">
-            Pay Once. Walk Away Anytime.
+            Start free. Scale when ready.
           </h2>
-          <p className="text-lg text-slate-500 max-w-2xl mx-auto">
-            You choose your period. You pay once. You renew when — and only if — you decide to. No auto-billing. No cancellation traps.
+          <p className="text-lg text-slate-400 max-w-xl mx-auto">
+            Monthly subscription. Cancel anytime. No surprise charges — ever.
           </p>
         </motion.div>
 
-        {/* Financial insight banner */}
+        {/* Billing note */}
         <motion.div
-          initial={{ opacity: 0, y: 16 }}
-          animate={isInView ? { opacity: 1, y: 0 } : {}}
-          transition={{ duration: 0.6, delay: 0.15 }}
-          className="bg-white border border-amber-200 rounded-2xl p-5 mb-10 flex flex-col md:flex-row items-start md:items-center gap-4 shadow-sm"
-        >
-          <div className="flex items-center gap-3 shrink-0">
-            <div className="w-10 h-10 rounded-xl bg-amber-50 flex items-center justify-center">
-              <AlertTriangle className="w-5 h-5 text-amber-500" />
-            </div>
-            <span className="font-bold text-slate-900 text-sm">What typical cloud really costs you:</span>
-          </div>
-          <p className="text-sm text-slate-500 leading-relaxed">
-            A standard monthly storage plan billed over 3 years quietly accumulates into a significant sum — while the provider profits from scanning, analysing, and leveraging your personal media. With Vaulti, you pay per defined period only, and your data is never an asset that funds someone else's business model.
-          </p>
-          <div className="flex items-center gap-2 shrink-0 text-emerald-700 font-semibold text-sm">
-            <TrendingDown className="w-4 h-4" />
-            Lower long-term cost
-          </div>
-        </motion.div>
-
-        <div className="grid md:grid-cols-3 gap-6 items-start">
-          {tiers.map((tier, i) => {
-            const Icon = tier.icon;
-            return (
-              <motion.div
-                key={tier.name}
-                initial={{ opacity: 0, y: 36 }}
-                animate={isInView ? { opacity: 1, y: 0 } : {}}
-                transition={{ duration: 0.6, delay: 0.2 + i * 0.12 }}
-                className={`relative bg-white rounded-2xl overflow-hidden card-hover ${
-                  tier.featured
-                    ? "border-2 border-blue-600 shadow-xl shadow-blue-100"
-                    : "border border-slate-100 shadow-sm"
-                }`}
-              >
-                {tier.badge && (
-                  <div className="bg-blue-600 text-white text-xs font-bold px-4 py-2 text-center uppercase tracking-wider">
-                    {tier.badge}
-                  </div>
-                )}
-
-                <div className="p-7">
-                  <div className={`w-12 h-12 rounded-xl flex items-center justify-center mb-5 ${tier.featured ? "bg-blue-100" : "bg-slate-100"}`}>
-                    <Icon className={`w-6 h-6 ${tier.featured ? "text-blue-600" : "text-slate-500"}`} />
-                  </div>
-
-                  <div className="text-xs font-semibold text-slate-400 uppercase tracking-widest mb-1">{tier.tagline}</div>
-                  <h3 className="text-xl font-bold text-slate-900 mb-4">{tier.name}</h3>
-
-                  <div className="mb-1">
-                    <span className={`text-4xl font-extrabold ${tier.featured ? "text-blue-600" : "text-slate-900"}`}>{tier.storage}</span>
-                  </div>
-                  <div className="text-sm text-slate-500 mb-1">{tier.duration}</div>
-                  <div className="text-xs font-semibold text-emerald-600 mb-6">{tier.pricing}</div>
-
-                  <div className="space-y-2.5 mb-8">
-                    {tier.features.map((f) => (
-                      <div key={f} className="flex items-center gap-2.5 text-sm text-slate-600">
-                        <Check className="w-4 h-4 text-emerald-500 shrink-0" />
-                        {f}
-                      </div>
-                    ))}
-                  </div>
-
-                  <a
-                    href="mailto:japuri0318@gmail.com"
-                    className={`flex items-center justify-center gap-2 w-full py-3.5 rounded-xl font-semibold text-sm transition-all duration-200 ${
-                      tier.featured
-                        ? "bg-blue-600 text-white hover:bg-blue-700 shadow-md hover:shadow-blue-200 hover:shadow-lg"
-                        : "bg-slate-100 text-slate-700 hover:bg-slate-200"
-                    }`}
-                  >
-                    Get Started
-                    <ArrowRight className="w-4 h-4" />
-                  </a>
-                </div>
-              </motion.div>
-            );
-          })}
-        </div>
-
-        {/* Bottom reassurance */}
-        <motion.p
           initial={{ opacity: 0 }}
           animate={isInView ? { opacity: 1 } : {}}
-          transition={{ duration: 0.6, delay: 0.6 }}
-          className="text-center text-sm text-slate-400 mt-8"
+          transition={{ duration: 0.5, delay: 0.2 }}
+          className="flex items-center justify-center gap-2 mb-14"
         >
-          No automatic renewals. No hidden fees. Contact us anytime to adjust, upgrade, or cancel — we respond fast.
-        </motion.p>
+          <Zap className="w-4 h-4 text-emerald-500" />
+          <span className="text-sm text-slate-500 font-medium">
+            Active Vault renews automatically each month — cancel anytime, no questions asked.
+          </span>
+        </motion.div>
+
+        {/* Cards */}
+        <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-5 items-end">
+          {tiers.map((tier, i) => (
+            <motion.div
+              key={tier.name}
+              initial={{ opacity: 0, y: 40 }}
+              animate={isInView ? { opacity: 1, y: 0 } : {}}
+              transition={{ duration: 0.55, delay: 0.1 + i * 0.1, ease: [0.22, 1, 0.36, 1] }}
+              className={`relative flex flex-col rounded-3xl overflow-hidden ${
+                tier.featured
+                  ? "border-2 border-blue-600 shadow-2xl shadow-blue-100 bg-white scale-[1.03]"
+                  : "border border-slate-200 shadow-sm bg-white"
+              }`}
+            >
+              {/* Badge */}
+              {tier.badge && (
+                <div className="bg-blue-600 text-white text-xs font-bold px-4 py-2.5 text-center tracking-wide">
+                  {tier.badge}
+                </div>
+              )}
+
+              <div className="p-7 flex flex-col flex-1">
+                {/* Plan name */}
+                <p className="text-xs font-bold uppercase tracking-widest text-slate-400 mb-1">{tier.tagline}</p>
+                <h3 className={`text-base font-bold mb-5 leading-tight ${tier.featured ? "text-blue-700" : "text-slate-900"}`}>
+                  {tier.name}
+                </h3>
+
+                {/* Price */}
+                <div className="mb-1">
+                  <span className={`text-4xl font-black ${tier.featured ? "text-blue-600" : "text-slate-900"}`}>
+                    {tier.price}
+                  </span>
+                </div>
+                <p className="text-xs text-slate-400 mb-1">{tier.priceNote}</p>
+                <p className={`text-2xl font-bold mb-5 ${tier.featured ? "text-blue-500" : "text-slate-600"}`}>
+                  {tier.storage}
+                  <span className="text-sm font-normal text-slate-400 ml-1">storage</span>
+                </p>
+
+                {/* Description */}
+                <p className="text-sm text-slate-500 leading-relaxed mb-6 flex-1">
+                  {tier.description}
+                </p>
+
+                {/* Features */}
+                <ul className="space-y-2 mb-8">
+                  {tier.features.map((f) => (
+                    <li key={f} className="flex items-center gap-2.5 text-sm text-slate-600">
+                      <div className={`w-4 h-4 rounded-full flex items-center justify-center shrink-0 ${tier.featured ? "bg-blue-100" : "bg-emerald-100"}`}>
+                        <Check className={`w-2.5 h-2.5 ${tier.featured ? "text-blue-600" : "text-emerald-600"}`} />
+                      </div>
+                      {f}
+                    </li>
+                  ))}
+                </ul>
+
+                {/* CTA */}
+                <a
+                  href="mailto:japuri0318@gmail.com"
+                  className={`flex items-center justify-center gap-2 w-full py-3.5 rounded-2xl font-semibold text-sm transition-all duration-200 ${
+                    tier.featured
+                      ? "bg-blue-600 text-white hover:bg-blue-700 shadow-lg shadow-blue-200"
+                      : tier.price === "Free"
+                      ? "border-2 border-slate-200 text-slate-700 hover:border-blue-300 hover:text-blue-600"
+                      : "bg-slate-100 text-slate-700 hover:bg-slate-200"
+                  }`}
+                >
+                  {tier.cta}
+                  <ArrowRight className="w-4 h-4" />
+                </a>
+              </div>
+            </motion.div>
+          ))}
+        </div>
+
+        {/* Reassurance row */}
+        <motion.div
+          initial={{ opacity: 0 }}
+          animate={isInView ? { opacity: 1 } : {}}
+          transition={{ duration: 0.6, delay: 0.7 }}
+          className="mt-12 flex flex-wrap items-center justify-center gap-8 text-sm text-slate-400"
+        >
+          {[
+            "No auto-charge surprises",
+            "Cancel before next billing cycle",
+            "Full data export on request",
+            "Real human support",
+          ].map((item) => (
+            <div key={item} className="flex items-center gap-2">
+              <Star className="w-3.5 h-3.5 text-emerald-400 fill-emerald-400" />
+              {item}
+            </div>
+          ))}
+        </motion.div>
       </div>
     </section>
   );

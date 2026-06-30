@@ -1,182 +1,212 @@
 import { useRef } from "react";
 import { motion, useInView } from "framer-motion";
-import { Cloud, Globe, Server, Bot, Network, ArrowRight, Mail } from "lucide-react";
+import { Camera, Plane, Users, Clapperboard, FolderLock, Smile, ArrowRight, Mail } from "lucide-react";
 
-const solutions = [
+const useCases = [
   {
-    icon: Cloud,
-    number: "01",
+    icon: Camera,
     color: "blue",
-    title: "Cloud Storage Solutions",
-    subtitle: "For individuals, families & small teams",
-    heroLine: "Your files. Your vault. Nobody else's business.",
-    body: "Stop handing your personal memories over to platforms that profit from them. With Vaulti, your photos and videos are stored in your own private, encrypted server vault — full resolution, fully isolated, fully yours. Whether you're an everyday user wanting to protect your family photos or a professional archiving important documents, you get private cloud storage that actually respects you.",
-    who: "Individuals, families, creators, and small teams who want privacy without the technical complexity.",
-    tags: ["Full-Resolution Photo & Video Backup", "Auto-Sync in Background", "Server-Side Encryption", "Multi-Device Access", "Document Archiving"],
+    eyebrow: "For everyday people",
+    headline: "Every photo. Backed up. Always.",
+    sub: "Your phone is full of moments you can't recreate. Vaulti silently backs them up — full resolution, no compression — so you never have to choose which ones to delete.",
+    stat: "100%",
+    statLabel: "Original quality",
+    accent: "from-blue-50 to-white",
+    border: "border-blue-100",
   },
   {
-    icon: Globe,
-    number: "02",
+    icon: Plane,
     color: "emerald",
-    title: "Website & Application Hosting",
-    subtitle: "For entrepreneurs, creators & businesses",
-    heroLine: "Your product online. Reliable. Managed. Done.",
-    body: "Whether you're launching a portfolio, a business website, or a full web application, you need hosting that's fast, secure, and doesn't go down. We handle server configuration, deployment, SSL setup, and ongoing maintenance — so you can focus on building your product and growing your business, not troubleshooting server errors at midnight.",
-    who: "Entrepreneurs, freelancers, startups, and businesses that need reliable hosting without managing the infrastructure themselves.",
-    tags: ["Managed Web Hosting", "Custom Domain Setup", "SSL & Security", "Performance Optimisation", "Ongoing Maintenance"],
+    eyebrow: "For travelers",
+    headline: "Trip of a lifetime. Photos that last.",
+    sub: "You travel once. The photos stay forever — or until your phone breaks, gets stolen, or runs out of space. Vaulti keeps every shot safe the moment it's taken.",
+    stat: "30 days",
+    statLabel: "Event Capsule window",
+    accent: "from-emerald-50 to-white",
+    border: "border-emerald-100",
   },
   {
-    icon: Server,
-    number: "03",
+    icon: Users,
     color: "blue",
-    title: "Virtual Private Server (VPS) Hosting",
-    subtitle: "For developers, teams & growing businesses",
-    heroLine: "Dedicated compute. Full control. Zero babysitting.",
-    body: "A VPS gives you your own isolated slice of server resources — dedicated CPU, RAM, and storage that isn't shared with anyone else. We provision, harden, and manage your VPS environment so your development or production workloads run on a reliable, properly secured foundation. Whether it's a staging server, a database backend, or a containerised application — we set it up right.",
-    who: "Developers, engineering teams, and businesses that need dedicated server resources and control without hiring a full-time sysadmin.",
-    tags: ["Dedicated Server Resources", "Root-Level Access Available", "Scalable Compute & Storage", "99.9% Uptime Focus", "Security Hardening"],
+    eyebrow: "For families",
+    headline: "One vault. The whole family.",
+    sub: "Kids grow up fast. Vaulti is the one place where every birthday, every first step, every ordinary Tuesday stays intact — private, full-resolution, and accessible on any device.",
+    stat: "500 GB",
+    statLabel: "Family-sized storage",
+    accent: "from-blue-50 to-white",
+    border: "border-blue-100",
   },
   {
-    icon: Bot,
-    number: "04",
+    icon: Clapperboard,
     color: "emerald",
-    title: "Business Automation Solutions",
-    subtitle: "For businesses ready to work smarter, not harder",
-    heroLine: "Stop doing manually what a system can do automatically.",
-    body: "Every hour your team spends on repetitive, predictable tasks is an hour not spent on your actual business. We analyse your current workflows, identify what can be automated, and build systems that handle those processes reliably — customer onboarding, data collection, internal reporting, follow-up sequences, and more. If it happens the same way every time, it can be automated.",
-    who: "Business owners, operations managers, and growing teams who are losing time to repetitive processes and want to reclaim it.",
-    tags: ["Workflow Automation", "System & App Integrations", "Auto Reporting Pipelines", "Onboarding Flows", "Process Optimisation"],
+    eyebrow: "For creators",
+    headline: "Your work deserves better than a free tier.",
+    sub: "RAW files. 4K clips. Weeks of footage. Generic cloud compresses it or charges you a fortune. Vaulti stores it all — unaltered, unlimited uploads, no hidden fees.",
+    stat: "No",
+    statLabel: "Compression. Ever.",
+    accent: "from-emerald-50 to-white",
+    border: "border-emerald-100",
   },
   {
-    icon: Network,
-    number: "05",
+    icon: FolderLock,
     color: "blue",
-    title: "Managed IT Infrastructure Services",
-    subtitle: "For organisations that need reliable IT backbone",
-    heroLine: "Enterprise-grade IT reliability — without the enterprise price tag.",
-    body: "Your business runs on its IT infrastructure. When that infrastructure fails, everything stops. We provide proactive managed IT services — monitoring your servers, networks, and systems around the clock, applying security patches before vulnerabilities are exploited, managing backups, and responding to issues before they become outages. Think of it as having a dedicated IT team, without the overhead of hiring one.",
-    who: "SMEs, growing companies, and organisations that rely on their IT systems and need them managed professionally without a full in-house IT department.",
-    tags: ["24/7 Infrastructure Monitoring", "Backup & Disaster Recovery", "Network Management", "Security Hardening & Patching", "Proactive Maintenance"],
+    eyebrow: "For professionals",
+    headline: "Documents that stay private.",
+    sub: "Contracts, IDs, tax records, sensitive files. Not everything belongs in a platform that mines your data. Vaulti keeps professional files secure and accessible — only to you.",
+    stat: "0",
+    statLabel: "Third parties with access",
+    accent: "from-blue-50 to-white",
+    border: "border-blue-100",
+  },
+  {
+    icon: Smile,
+    color: "emerald",
+    eyebrow: "For everyone else",
+    headline: "Just… peace of mind.",
+    sub: "You shouldn't have to think about backups. Set Vaulti once. It runs quietly in the background. Your memories are safe. That's the whole point.",
+    stat: "Set once",
+    statLabel: "Runs forever",
+    accent: "from-emerald-50 to-white",
+    border: "border-emerald-100",
   },
 ];
 
-function SolutionCard({ sol, i }: { sol: typeof solutions[0]; i: number }) {
+function UseCase({ uc, i }: { uc: typeof useCases[0]; i: number }) {
   const ref = useRef<HTMLDivElement>(null);
-  const isInView = useInView(ref, { once: true, margin: "-80px" });
-  const Icon = sol.icon;
-  const isBlue = sol.color === "blue";
+  const isInView = useInView(ref, { once: true, margin: "-60px" });
+  const Icon = uc.icon;
+  const isBlue = uc.color === "blue";
+  const isEven = i % 2 === 0;
 
   return (
     <motion.div
       ref={ref}
-      initial={{ opacity: 0, y: 32 }}
-      animate={isInView ? { opacity: 1, y: 0 } : {}}
-      transition={{ duration: 0.65, delay: 0.05 * i }}
-      className="bg-white border border-slate-100 rounded-3xl overflow-hidden shadow-sm"
+      initial={{ opacity: 0, y: 40, scale: 0.97 }}
+      animate={isInView ? { opacity: 1, y: 0, scale: 1 } : {}}
+      transition={{ duration: 0.6, delay: 0.05, ease: [0.22, 1, 0.36, 1] }}
+      className={`relative overflow-hidden rounded-3xl border ${uc.border} bg-gradient-to-br ${uc.accent} p-8 md:p-10`}
     >
-      {/* Card header */}
-      <div className={`px-8 pt-8 pb-6 ${isBlue ? "bg-gradient-to-br from-blue-50 to-white" : "bg-gradient-to-br from-emerald-50 to-white"}`}>
-        <div className="flex items-start justify-between mb-4">
-          <div className={`w-14 h-14 rounded-2xl flex items-center justify-center shadow-sm ${isBlue ? "bg-blue-100" : "bg-emerald-100"}`}>
-            <Icon className={`w-7 h-7 ${isBlue ? "text-blue-600" : "text-emerald-600"}`} />
-          </div>
-          <span className={`text-5xl font-black opacity-10 ${isBlue ? "text-blue-600" : "text-emerald-600"}`}>{sol.number}</span>
-        </div>
-        <h2 className="text-2xl font-bold text-slate-900 mb-1">{sol.title}</h2>
-        <p className={`text-sm font-semibold mb-3 ${isBlue ? "text-blue-500" : "text-emerald-600"}`}>{sol.subtitle}</p>
-        <p className="text-base font-semibold text-slate-700 italic">"{sol.heroLine}"</p>
+      {/* Large background number */}
+      <div className={`absolute -right-4 -top-6 text-[120px] font-black leading-none select-none pointer-events-none ${isBlue ? "text-blue-600/5" : "text-emerald-600/5"}`}>
+        {String(i + 1).padStart(2, "0")}
       </div>
 
-      {/* Card body */}
-      <div className="px-8 py-6 space-y-6">
-        <p className="text-sm text-slate-500 leading-relaxed">{sol.body}</p>
-
-        <div>
-          <p className="text-xs font-bold uppercase tracking-widest text-slate-400 mb-3">Best for</p>
-          <p className="text-sm text-slate-600 leading-relaxed">{sol.who}</p>
+      <div className={`flex flex-col ${isEven ? "md:flex-row" : "md:flex-row-reverse"} gap-8 items-center`}>
+        {/* Icon + stat */}
+        <div className="flex flex-col items-center gap-4 shrink-0">
+          <motion.div
+            initial={{ scale: 0.8, rotate: -6 }}
+            animate={isInView ? { scale: 1, rotate: 0 } : {}}
+            transition={{ duration: 0.5, delay: 0.15, type: "spring", stiffness: 200 }}
+            className={`w-20 h-20 rounded-2xl flex items-center justify-center shadow-lg ${isBlue ? "bg-blue-600" : "bg-emerald-600"}`}
+          >
+            <Icon className="w-10 h-10 text-white" />
+          </motion.div>
+          <motion.div
+            initial={{ opacity: 0, y: 8 }}
+            animate={isInView ? { opacity: 1, y: 0 } : {}}
+            transition={{ duration: 0.4, delay: 0.3 }}
+            className="text-center"
+          >
+            <div className={`text-3xl font-black ${isBlue ? "text-blue-600" : "text-emerald-600"}`}>{uc.stat}</div>
+            <div className="text-xs text-slate-400 font-medium mt-0.5">{uc.statLabel}</div>
+          </motion.div>
         </div>
 
-        <div>
-          <p className="text-xs font-bold uppercase tracking-widest text-slate-400 mb-3">What's included</p>
-          <div className="flex flex-wrap gap-2">
-            {sol.tags.map((tag) => (
-              <span key={tag} className={`text-xs px-3 py-1.5 rounded-full font-medium ${isBlue ? "bg-blue-50 text-blue-700" : "bg-emerald-50 text-emerald-700"}`}>
-                {tag}
-              </span>
-            ))}
-          </div>
+        {/* Text */}
+        <div className="flex-1">
+          <motion.p
+            initial={{ opacity: 0, x: isEven ? 20 : -20 }}
+            animate={isInView ? { opacity: 1, x: 0 } : {}}
+            transition={{ duration: 0.5, delay: 0.1 }}
+            className={`text-xs font-bold uppercase tracking-widest mb-2 ${isBlue ? "text-blue-500" : "text-emerald-600"}`}
+          >
+            {uc.eyebrow}
+          </motion.p>
+          <motion.h2
+            initial={{ opacity: 0, x: isEven ? 20 : -20 }}
+            animate={isInView ? { opacity: 1, x: 0 } : {}}
+            transition={{ duration: 0.5, delay: 0.18 }}
+            className="text-2xl md:text-3xl font-bold text-slate-900 mb-3 leading-tight"
+          >
+            {uc.headline}
+          </motion.h2>
+          <motion.p
+            initial={{ opacity: 0, x: isEven ? 20 : -20 }}
+            animate={isInView ? { opacity: 1, x: 0 } : {}}
+            transition={{ duration: 0.5, delay: 0.26 }}
+            className="text-slate-500 leading-relaxed"
+          >
+            {uc.sub}
+          </motion.p>
+          <motion.a
+            href="mailto:japuri0318@gmail.com"
+            initial={{ opacity: 0 }}
+            animate={isInView ? { opacity: 1 } : {}}
+            transition={{ duration: 0.4, delay: 0.4 }}
+            className={`inline-flex items-center gap-1.5 mt-5 text-sm font-semibold ${isBlue ? "text-blue-600 hover:text-blue-800" : "text-emerald-600 hover:text-emerald-800"} transition-colors`}
+          >
+            Get started <ArrowRight className="w-4 h-4" />
+          </motion.a>
         </div>
-
-        <a
-          href="mailto:japuri0318@gmail.com"
-          className={`inline-flex items-center gap-2 font-semibold text-sm transition-colors duration-200 ${isBlue ? "text-blue-600 hover:text-blue-800" : "text-emerald-600 hover:text-emerald-800"}`}
-        >
-          Enquire about this solution
-          <ArrowRight className="w-4 h-4" />
-        </a>
       </div>
     </motion.div>
   );
 }
 
 export function SolutionsPage() {
-  const heroRef = useRef<HTMLDivElement>(null);
-
   return (
-    <div className="min-h-screen bg-slate-50 pt-24">
-      {/* Page hero */}
-      <div ref={heroRef} className="bg-white border-b border-slate-100 py-20 px-4 text-center">
+    <div className="min-h-screen bg-slate-50 pt-20">
+
+      {/* Hero */}
+      <div className="bg-white py-20 px-4 text-center border-b border-slate-100">
         <motion.div
-          initial={{ opacity: 0, y: 20 }}
+          initial={{ opacity: 0, y: 24 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.7 }}
         >
-          <div className="inline-flex items-center gap-2 bg-blue-50 text-blue-700 border border-blue-100 px-4 py-2 rounded-full text-sm font-medium mb-6">
-            <Network className="w-4 h-4" />
-            Everything We Offer
-          </div>
+          <p className="text-xs font-bold uppercase tracking-widest text-blue-500 mb-4">What Vaulti is for</p>
           <h1 className="text-4xl md:text-6xl font-bold text-slate-900 mb-5 leading-tight">
-            Solutions Built for{" "}
-            <span className="text-blue-600">Real Needs</span>
+            Your life creates memories.<br />
+            <span className="text-blue-600">Don't lose them.</span>
           </h1>
-          <p className="text-lg text-slate-500 max-w-2xl mx-auto mb-8">
-            From personal cloud storage to full IT infrastructure management — every service is delivered personally, with no corporate middlemen and no fine print.
+          <p className="text-lg text-slate-400 max-w-xl mx-auto mb-8">
+            Vaulti is private cloud storage built around one idea — your files belong to you, backed up automatically, forever.
           </p>
           <a
             href="mailto:japuri0318@gmail.com"
-            className="inline-flex items-center gap-2 bg-blue-600 text-white px-8 py-4 rounded-xl font-semibold hover:bg-blue-700 transition-all duration-200 shadow-lg"
+            className="inline-flex items-center gap-2 bg-blue-600 text-white px-8 py-4 rounded-2xl font-semibold hover:bg-blue-700 transition-all duration-200 shadow-lg shadow-blue-200"
           >
             <Mail className="w-4 h-4" />
-            Talk to us about your needs
+            Start for free
           </a>
         </motion.div>
       </div>
 
-      {/* Solutions grid */}
-      <div className="max-w-5xl mx-auto px-4 py-20 grid md:grid-cols-2 gap-6">
-        {solutions.map((sol, i) => (
-          <SolutionCard key={sol.title} sol={sol} i={i} />
+      {/* Use cases */}
+      <div className="max-w-4xl mx-auto px-4 py-20 space-y-6">
+        {useCases.map((uc, i) => (
+          <UseCase key={uc.eyebrow} uc={uc} i={i} />
         ))}
       </div>
 
       {/* Bottom CTA */}
-      <div className="bg-slate-900 py-20 px-4 text-center">
+      <div className="bg-slate-900 py-24 px-4 text-center">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.7 }}
           viewport={{ once: true }}
         >
-          <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">Not sure which solution fits you?</h2>
-          <p className="text-slate-400 mb-8 max-w-lg mx-auto">
-            Send us a message describing what you need. We'll figure out the best approach together — no sales pressure, just honest guidance.
-          </p>
+          <p className="text-slate-400 text-sm font-semibold uppercase tracking-widest mb-4">Ready?</p>
+          <h2 className="text-3xl md:text-5xl font-bold text-white mb-6 leading-tight">
+            Your next photo<br />deserves a safe home.
+          </h2>
           <a
             href="mailto:japuri0318@gmail.com"
-            className="inline-flex items-center gap-2 bg-blue-600 text-white px-8 py-4 rounded-xl font-semibold hover:bg-blue-500 transition-all duration-200 shadow-lg"
+            className="inline-flex items-center gap-2 bg-blue-600 text-white px-8 py-4 rounded-2xl font-semibold hover:bg-blue-500 transition-all duration-200 shadow-lg"
           >
-            Get in touch
-            <ArrowRight className="w-5 h-5" />
+            Set up your vault <ArrowRight className="w-5 h-5" />
           </a>
         </motion.div>
       </div>
