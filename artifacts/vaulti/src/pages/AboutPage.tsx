@@ -1,8 +1,8 @@
-import { useRef, useState } from "react";
+import { useRef } from "react";
 import { motion, useInView } from "framer-motion";
 import {
   Server, Code2, Lightbulb, Network, ShieldCheck,
-  Mail, ArrowRight, Upload, Heart, Target, Zap
+  Mail, ArrowRight, Heart, Target, Zap
 } from "lucide-react";
 
 const experiences = [
@@ -65,15 +65,6 @@ export function AboutPage() {
   const expInView = useInView(expRef, { once: true, margin: "-80px" });
   const whyInView = useInView(whyRef, { once: true, margin: "-80px" });
 
-  const [photoSrc, setPhotoSrc] = useState<string | null>(null);
-
-  function handlePhotoChange(e: React.ChangeEvent<HTMLInputElement>) {
-    const file = e.target.files?.[0];
-    if (!file) return;
-    const reader = new FileReader();
-    reader.onload = (ev) => setPhotoSrc(ev.target?.result as string);
-    reader.readAsDataURL(file);
-  }
 
   return (
     <div className="min-h-screen bg-white pt-24">
@@ -110,24 +101,12 @@ export function AboutPage() {
             className="flex flex-col items-center md:items-start gap-6"
           >
             {/* Profile photo */}
-            <div className="relative group">
-              <div className="w-48 h-48 rounded-3xl overflow-hidden border-4 border-white shadow-xl bg-gradient-to-br from-blue-100 to-slate-100 flex items-center justify-center">
-                {photoSrc ? (
-                  <img src={photoSrc} alt="Founder" className="w-full h-full object-cover" />
-                ) : (
-                  <div className="flex flex-col items-center gap-2 text-slate-400">
-                    <Upload className="w-10 h-10" />
-                    <span className="text-xs font-medium text-center px-4">Click to add your photo</span>
-                  </div>
-                )}
-              </div>
-              {/* Upload overlay */}
-              <label className="absolute inset-0 rounded-3xl cursor-pointer opacity-0 group-hover:opacity-100 transition-opacity duration-200 bg-slate-900/30 flex items-center justify-center">
-                <span className="text-white text-xs font-semibold bg-slate-900/70 px-3 py-1.5 rounded-full flex items-center gap-1.5">
-                  <Upload className="w-3.5 h-3.5" /> Change photo
-                </span>
-                <input type="file" accept="image/*" className="hidden" onChange={handlePhotoChange} />
-              </label>
+            <div className="w-48 h-48 rounded-3xl overflow-hidden border-4 border-white shadow-xl">
+              <img
+                src="/founder.jpeg"
+                alt="Jakob Edhel A Puri — Founder, Vaulti"
+                className="w-full h-full object-cover object-top"
+              />
             </div>
 
             <div>
