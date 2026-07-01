@@ -351,7 +351,7 @@ export function PrivacyVisual() {
                 icon: Image,
                 color: "blue",
                 title: "Full-Resolution Originals",
-                desc: "Unlike Google Photos or iCloud, we never compress or re-encode your memories. Every pixel is preserved exactly as your camera captured it.",
+                desc: "Unlike typical cloud photo services, we never compress or re-encode your memories. Every pixel is preserved exactly as your camera captured it.",
               },
               {
                 icon: Shield,

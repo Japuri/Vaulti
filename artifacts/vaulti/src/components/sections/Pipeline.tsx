@@ -17,7 +17,7 @@ const steps = [
     color: "blue",
     title: "Account Verification",
     description:
-      "Receive your unique system registration link, create your account, and download the free Nextcloud application from the App Store or Google Play. Setup takes less than five minutes.",
+      "Receive your unique system registration link, create your account, and download the free Nextcloud application from your device's app store. Setup takes less than five minutes.",
   },
   {
     number: "03",
