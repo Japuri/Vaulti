@@ -194,13 +194,13 @@ export function Pipeline() {
           className="text-center mb-14"
         >
           <div className="inline-flex items-center gap-2 bg-blue-50 text-blue-700 border border-blue-100 px-4 py-2 rounded-full text-sm font-medium mb-5">
-            Simple 3-Step Setup
+            Powered by Nextcloud
           </div>
           <h2 className="text-4xl md:text-5xl font-bold text-slate-900 mb-4">
-            Up and Running in Minutes
+            How Your Files Stay Safe
           </h2>
           <p className="text-lg text-slate-500 max-w-2xl mx-auto">
-            No technical knowledge required. Your private vault is ready faster than you'd expect.
+            The moment you take a photo, Nextcloud's open-source sync engine quietly captures it — encrypted in transit, isolated on your private server, untouched by anyone else.
           </p>
         </motion.div>
 
