@@ -92,13 +92,13 @@ export function PrivacyVisual() {
         >
           <div className="inline-flex items-center gap-2 bg-blue-50 text-blue-700 border border-blue-100 px-4 py-2 rounded-full text-sm font-medium mb-6">
             <Shield className="w-4 h-4" />
-            Server-Side Data Isolation
+            Secure Private Infrastructure
           </div>
           <h2 className="text-4xl md:text-5xl font-bold text-slate-900 mb-4">
-            Your Files. Securely Isolated.
+            Your Files. Privately Stored.
           </h2>
           <p className="text-lg text-slate-500 max-w-2xl mx-auto">
-            The moment your photos reach our hardware, they're automatically scrambled into encrypted blocks — rendering them structurally unreadable to anyone browsing the storage layer.
+            Your files are protected by industry-standard TLS encryption during transfer and stored within a secure private cloud infrastructure designed for privacy, reliability, and controlled access.
           </p>
         </motion.div>
 
@@ -286,7 +286,7 @@ export function PrivacyVisual() {
                         </div>
                       </motion.div>
                     </div>
-                    <p className="text-sm text-slate-500 font-medium text-center">Server automatically scrambles your photo<br />into cryptographic blocks. No one can read this.</p>
+                    <p className="text-sm text-slate-500 font-medium text-center">Data travels over TLS-encrypted connections.<br />Protected in transit from device to server.</p>
                   </motion.div>
                 )}
 
@@ -320,12 +320,12 @@ export function PrivacyVisual() {
                         transition={{ delay: 0.7 }}
                         className="absolute -bottom-3 left-1/2 -translate-x-1/2 whitespace-nowrap bg-emerald-600 text-white text-[10px] font-bold px-3 py-1 rounded-full shadow"
                       >
-                        STRUCTURALLY ISOLATED
+                        PRIVATELY STORED
                       </motion.div>
                     </div>
                     <p className="text-sm text-slate-500 font-medium text-center pt-4">
-                      Encrypted blocks stored safely.<br />
-                      <span className="text-emerald-700 font-semibold">Unreadable to any human — including us.</span>
+                      Stored safely in your private vault.<br />
+                      <span className="text-emerald-700 font-semibold">Authenticated access only — controlled by you.</span>
                     </p>
                   </motion.div>
                 )}
@@ -356,8 +356,8 @@ export function PrivacyVisual() {
               {
                 icon: Shield,
                 color: "blue",
-                title: "Automatic Server-Side Isolation",
-                desc: "The instant your files reach our storage arrays, the Nextcloud architecture scrambles them into encrypted blocks. No one can browse your raw photos through the storage layer.",
+                title: "Secure Private Cloud Infrastructure",
+                desc: "Your files are stored within a private Nextcloud server protected by Cloudflare Tunnel and authenticated access. Only you can log in to your vault — no third parties involved.",
               },
               {
                 icon: Lock,

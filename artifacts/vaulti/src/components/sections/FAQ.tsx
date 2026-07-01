@@ -9,15 +9,15 @@ const faqs = [
   },
   {
     q: "Can the administrator browse my raw photos?",
-    a: "No. The Nextcloud server-side architecture automatically scrambles incoming media assets into cryptographic blocks the moment they hit our hardware storage arrays. While we manage the encrypted server shell framework so we can keep your account running and support you if needed, your raw photo content is structurally isolated — no one on our team can browse or view your personal files through the storage layer.",
+    a: "No. Your files are stored within a private Nextcloud infrastructure that requires authenticated access — only you can log in to your vault. Access to the server is protected by Cloudflare Tunnel, and all data travels over TLS-encrypted connections. We manage the infrastructure to keep your account running and support you when needed, but we do not browse or use your personal files for any purpose.",
   },
   {
     q: "What happens if I forget my password?",
-    a: "Because we manage the encrypted server shell framework on your behalf, you can simply contact us via our secure chat to safely reset your account credentials. Unlike fully self-hosted systems where a forgotten password means permanent data loss, our model means we can restore your access securely — without compromising the privacy of your stored media.",
+    a: "Because we manage the infrastructure on your behalf, you can simply contact us via our secure chat to reset your account credentials. Unlike fully self-hosted systems where a forgotten password can mean permanent data loss, our managed model means we can restore your access — without accessing your personal files.",
   },
   {
     q: "Can I access my files from multiple devices?",
-    a: "Yes. The free Nextcloud app is available on iOS, Android, macOS, Windows, and Linux. Once your vault is set up, you can sync and access your files across all your devices — everything streams from your securely isolated server storage to whichever device you're using.",
+    a: "Yes. The free Nextcloud app is available on iOS, Android, macOS, Windows, and Linux. Once your vault is set up, you can sync and access your files across all your devices — everything syncs from your private Nextcloud vault to whichever device you're using.",
   },
   {
     q: "How does the subscription window renewal work?",

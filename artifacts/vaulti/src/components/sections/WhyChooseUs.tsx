@@ -13,7 +13,7 @@ const reasons = [
     icon: Eye,
     color: "emerald",
     title: "Your Files Are Never Seen or Analysed",
-    body: "From the moment your media reaches our servers, it's scrambled into encrypted blocks at the storage layer. No one on our team — or anywhere — can browse your photos or videos. This isn't a policy. It's how the architecture is designed.",
+    body: "Your files are transferred over industry-standard TLS encryption and stored within a private Nextcloud infrastructure protected by Cloudflare Tunnel. Access is strictly authenticated — your data isn't browsed, sold, or used for anything beyond storage.",
   },
   {
     icon: Lock,

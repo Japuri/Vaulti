@@ -66,7 +66,7 @@ export function Hero() {
           className="mt-16 flex flex-wrap items-center justify-center gap-8 text-sm text-slate-500"
         >
           {[
-            "Server-Side Encryption",
+            "TLS-Encrypted Transfers",
             "No Data Profiling",
             "Open-Source Verified",
             "Fixed Subscription Windows",

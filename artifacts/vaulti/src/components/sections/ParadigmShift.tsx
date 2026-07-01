@@ -26,7 +26,7 @@ const rows = [
   {
     label: "File Encryption",
     bad: "Accessible to corporate & third-party teams",
-    good: "Isolated server-side encryption",
+    good: "TLS-encrypted transfers, private server access",
   },
   {
     label: "Code Transparency",

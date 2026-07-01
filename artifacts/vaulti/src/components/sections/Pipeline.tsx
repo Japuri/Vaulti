@@ -161,7 +161,7 @@ function LiveProcessDiagram() {
       <div className="absolute bottom-0 left-1/2 -translate-x-1/2 flex items-center gap-4 md:gap-6">
         {[
           { label: "Syncing", value: "Live", color: "text-blue-600", icon: Zap },
-          { label: "Encrypted", value: "AES-256", color: "text-emerald-600", icon: Shield },
+          { label: "Transfer", value: "TLS", color: "text-emerald-600", icon: Shield },
           { label: "Quality", value: "Original", color: "text-amber-600", icon: CheckCircle2 },
         ].map(({ label, value, color, icon: Icon }, i) => (
           <motion.div
