@@ -247,7 +247,7 @@ export function Pipeline() {
                 animate={{ opacity: [1, 0.3, 1] }}
                 transition={{ duration: 1.2, repeat: Infinity }}
               />
-              <span className="text-xs font-bold text-slate-500 uppercase tracking-widest">Live Nextcloud Sync Process</span>
+              <span className="text-xs font-bold text-slate-500 uppercase tracking-widest">Nextcloud Sync Process</span>
             </div>
             <div className="flex gap-1.5">
               <div className="w-3 h-3 rounded-full bg-red-300" />
