@@ -4,6 +4,7 @@ import { ParadigmShift } from "../components/sections/ParadigmShift";
 import { WhyChooseUs } from "../components/sections/WhyChooseUs";
 import { Pipeline } from "../components/sections/Pipeline";
 import { Pricing } from "../components/sections/Pricing";
+import { GettingStarted } from "../components/sections/GettingStarted";
 import { FAQ } from "../components/sections/FAQ";
 
 export function HomePage() {
@@ -15,6 +16,7 @@ export function HomePage() {
       <WhyChooseUs />
       <Pipeline />
       <Pricing />
+      <GettingStarted />
       <FAQ />
     </>
   );
