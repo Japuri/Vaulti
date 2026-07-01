@@ -113,7 +113,7 @@ export function PrivacyVisual() {
           >
             {/* Stage label */}
             <div className="flex items-center justify-between mb-6">
-              <span className="text-xs font-semibold text-slate-400 uppercase tracking-widest">Live Process</span>
+              <span className="text-xs font-semibold text-slate-400 uppercase tracking-widest">Process</span>
               <span className="text-xs font-semibold text-blue-600 bg-blue-50 border border-blue-100 px-3 py-1 rounded-full">
                 {PHASE_LABELS[phase]}
               </span>
